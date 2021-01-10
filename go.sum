@@ -99,13 +99,13 @@ github.com/stretchr/testify v1.6.2-0.20201103103935-92707c0b2d50 h1:aQdElrdadJZj
 github.com/stretchr/testify v1.6.2-0.20201103103935-92707c0b2d50/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/urfave/cli v1.22.2-0.20191024042601-850de854cda0 h1:F9D6tx2NI+LPI0fWSM7MwRBdtgP2XMxnx4qunWbGzO4=
 github.com/urfave/cli v1.22.2-0.20191024042601-850de854cda0/go.mod h1:Gos4lmkARVdJ6EkW0WaNv/tZAAMe9V7XWyB60NtXRu0=
-github.com/xtaci/smux v1.5.16-0.20201210092030-eba6ee1d2a14 h1:z6T3tlA/eo75Uq7533rXx5Qa+TRjtYzD17oQltQZIEI=
-github.com/xtaci/smux v1.5.16-0.20201210092030-eba6ee1d2a14/go.mod h1:OMlQbT5vcgl2gb49mFkYo6SMf+zP3rcjcwQz7ZU7IGY=
 github.com/xtaci/tcpraw v1.2.25 h1:VDlqo0op17JeXBM6e2G9ocCNLOJcw9mZbobMbJjo0vk=
 github.com/xtaci/tcpraw v1.2.25/go.mod h1:dKyZ2V75s0cZ7cbgJYdxPvms7af0joIeOyx1GgJQbLk=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 go.gridfinity.dev/gfcp v0.0.0-20210110090120-b9e28951ef4b h1:5KIUqYVrjHtoqIBUn5PhveoN/TnITiInL64dwhDXcfg=
 go.gridfinity.dev/gfcp v0.0.0-20210110090120-b9e28951ef4b/go.mod h1:O3NnbkVQyyZcujrcB3rNHYJ4KQsh4Z6K+/mB2M3NrlE=
+go.gridfinity.dev/gfsmux v1.5.16-0.20210110081946-6b57ec38da2c h1:1PHB+PonPqyKxA1v5OWU7dCr5UDQaRLajLJG4SNaqZI=
+go.gridfinity.dev/gfsmux v1.5.16-0.20210110081946-6b57ec38da2c/go.mod h1:dBXurcdt3oztF8PgQr/xrKlbeS5/4IXrLsCODHwl7t0=
 go.gridfinity.dev/leaktestfe v0.0.0-20210108112747-8342b7b9d70f h1:GxbvTmQIHh0/loGMTJB4Yg2Br2ZzM3cNvMTIU+HsPGk=
 go.gridfinity.dev/leaktestfe v0.0.0-20210108112747-8342b7b9d70f/go.mod h1:j9WoEgxbgkxv8Moi71wXaE8vGuV/bXfF9MMdJqUAGtA=
 go.opencensus.io v0.21.0/go.mod h1:mSImk1erAIZhrmZN+AvHh14ztQfjbGwt4TtuofqLduU=

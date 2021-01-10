@@ -7,13 +7,12 @@ require (
 	github.com/google/gopacket v1.1.20-0.20210106181958-0d0933d15ffc // indirect
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.2-0.20191024042601-850de854cda0
-	github.com/xtaci/smux v1.5.16-0.20201210092030-eba6ee1d2a14
 	github.com/xtaci/tcpraw v1.2.25
 	go.gridfinity.dev/gfcp v0.0.0-20210110090120-b9e28951ef4b
+	go.gridfinity.dev/gfsmux v1.5.16-0.20210110081946-6b57ec38da2c
 	go.gridfinity.dev/leaktestfe v0.0.0-20210108112747-8342b7b9d70f // indirect
 	go.uber.org/goleak v1.1.11-0.20200902203756-89d54f0adef2 // indirect
 	golang.org/x/sys v0.0.0-20210110051926-789bb1bd4061 // indirect
-	golang.org/x/tools v0.0.0-20210108195828-e2f9c7f1fc8e // indirect
 )
 
 go 1.15

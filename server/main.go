@@ -12,18 +12,14 @@ import (
 	"sync"
 	"time"
 
-	//"golang.org/x/crypto/pbkdf2"
-
 	"github.com/urfave/cli"
-	"github.com/xtaci/smux"
 	"github.com/xtaci/tcpraw"
 	kcp "go.gridfinity.dev/gfcp"
 	"go.gridfinity.dev/gfcptun/generic"
+	smux "go.gridfinity.dev/gfsmux"
 )
 
 const (
-	// SALT is use for pbkdf2 key expansion
-	SALT = "kcp-go"
 	// maximum supported smux version
 	maxSmuxVer = 2
 	// stream copy buffer size
@@ -353,9 +349,6 @@ func main() {
 			log.Fatal("unsupported smux version:", config.SmuxVer)
 		}
 
-		// log.Println("initiating key derivation")
-		// pass := pbkdf2.Key([]byte(config.Key), []byte(SALT), 4096, 32, sha1.New)
-		// log.Println("key derivation done")
 		go generic.SnsiLogger(config.SnsiLog, config.SnsiPeriod)
 		if config.Pprof {
 			go http.ListenAndServe(":6060", nil)

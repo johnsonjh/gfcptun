@@ -11,13 +11,11 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	"github.com/xtaci/smux"
 	"go.gridfinity.dev/gfcptun/generic"
+	smux "go.gridfinity.dev/gfsmux"
 )
 
 const (
-	// SALT is use for pbkdf2 key expansion
-	SALT = "kcp-go"
 	// maximum supported smux version
 	maxSmuxVer = 2
 	// stream copy buffer size
