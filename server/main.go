@@ -1,7 +1,6 @@
 package main
 
 import (
-	"crypto/sha1"
 	"fmt"
 	"io"
 	"log"
@@ -13,13 +12,13 @@ import (
 	"sync"
 	"time"
 
-	"golang.org/x/crypto/pbkdf2"
+	//"golang.org/x/crypto/pbkdf2"
 
 	"github.com/urfave/cli"
-	kcp "github.com/xtaci/kcp-go/v5"
-	"github.com/xtaci/kcptun/generic"
 	"github.com/xtaci/smux"
 	"github.com/xtaci/tcpraw"
+	kcp "go.gridfinity.dev/gfcp"
+	"go.gridfinity.dev/gfcptun/generic"
 )
 
 const (
@@ -278,7 +277,6 @@ func main() {
 		config.Listen = c.String("listen")
 		config.Target = c.String("target")
 		config.Key = c.String("key")
-		config.Crypt = c.String("crypt")
 		config.Mode = c.String("mode")
 		config.MTU = c.Int("mtu")
 		config.SndWnd = c.Int("sndwnd")
@@ -305,14 +303,14 @@ func main() {
 		config.TCP = c.Bool("tcp")
 
 		if c.String("c") != "" {
-			//Now only support json config file
+			// Now only support json config file
 			err := parseJSONConfig(&config, c.String("c"))
 			checkError(err)
 		}
 
 		// log redirect
 		if config.Log != "" {
-			f, err := os.OpenFile(config.Log, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+			f, err := os.OpenFile(config.Log, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0o666)
 			checkError(err)
 			defer f.Close()
 			log.SetOutput(f)
@@ -333,7 +331,6 @@ func main() {
 		log.Println("smux version:", config.SmuxVer)
 		log.Println("listening on:", config.Listen)
 		log.Println("target:", config.Target)
-		log.Println("encryption:", config.Crypt)
 		log.Println("nodelay parameters:", config.NoDelay, config.Interval, config.Resend, config.NoCongestion)
 		log.Println("sndwnd:", config.SndWnd, "rcvwnd:", config.RcvWnd)
 		log.Println("compression:", !config.NoComp)
@@ -356,40 +353,9 @@ func main() {
 			log.Fatal("unsupported smux version:", config.SmuxVer)
 		}
 
-		log.Println("initiating key derivation")
-		pass := pbkdf2.Key([]byte(config.Key), []byte(SALT), 4096, 32, sha1.New)
-		log.Println("key derivation done")
-		var block kcp.BlockCrypt
-		switch config.Crypt {
-		case "sm4":
-			block, _ = kcp.NewSM4BlockCrypt(pass[:16])
-		case "tea":
-			block, _ = kcp.NewTEABlockCrypt(pass[:16])
-		case "xor":
-			block, _ = kcp.NewSimpleXORBlockCrypt(pass)
-		case "none":
-			block, _ = kcp.NewNoneBlockCrypt(pass)
-		case "aes-128":
-			block, _ = kcp.NewAESBlockCrypt(pass[:16])
-		case "aes-192":
-			block, _ = kcp.NewAESBlockCrypt(pass[:24])
-		case "blowfish":
-			block, _ = kcp.NewBlowfishBlockCrypt(pass)
-		case "twofish":
-			block, _ = kcp.NewTwofishBlockCrypt(pass)
-		case "cast5":
-			block, _ = kcp.NewCast5BlockCrypt(pass[:16])
-		case "3des":
-			block, _ = kcp.NewTripleDESBlockCrypt(pass[:24])
-		case "xtea":
-			block, _ = kcp.NewXTEABlockCrypt(pass[:16])
-		case "salsa20":
-			block, _ = kcp.NewSalsa20BlockCrypt(pass)
-		default:
-			config.Crypt = "aes"
-			block, _ = kcp.NewAESBlockCrypt(pass)
-		}
-
+		// log.Println("initiating key derivation")
+		// pass := pbkdf2.Key([]byte(config.Key), []byte(SALT), 4096, 32, sha1.New)
+		// log.Println("key derivation done")
 		go generic.SnmpLogger(config.SnmpLog, config.SnmpPeriod)
 		if config.Pprof {
 			go http.ListenAndServe(":6060", nil)
@@ -410,7 +376,7 @@ func main() {
 			}
 
 			for {
-				if conn, err := lis.AcceptKCP(); err == nil {
+				if conn, err := lis.AcceptGFCP(); err == nil {
 					log.Println("remote address:", conn.RemoteAddr())
 					conn.SetStreamMode(true)
 					conn.SetWriteDelay(false)
@@ -432,7 +398,7 @@ func main() {
 
 		if config.TCP { // tcp dual stack
 			if conn, err := tcpraw.Listen("tcp", config.Listen); err == nil {
-				lis, err := kcp.ServeConn(block, config.DataShard, config.ParityShard, conn)
+				lis, err := kcp.ServeConn(config.DataShard, config.ParityShard, conn)
 				checkError(err)
 				wg.Add(1)
 				go loop(lis)
@@ -442,7 +408,7 @@ func main() {
 		}
 
 		// udp stack
-		lis, err := kcp.ListenWithOptions(config.Listen, block, config.DataShard, config.ParityShard)
+		lis, err := kcp.ListenWithOptions(config.Listen, config.DataShard, config.ParityShard)
 		checkError(err)
 		wg.Add(1)
 		go loop(lis)

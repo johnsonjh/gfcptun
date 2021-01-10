@@ -1,7 +1,6 @@
 package main
 
 import (
-	"crypto/sha1"
 	"fmt"
 	"io"
 	"log"
@@ -10,13 +9,10 @@ import (
 	"os"
 	"time"
 
-	"golang.org/x/crypto/pbkdf2"
-
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	kcp "github.com/xtaci/kcp-go/v5"
-	"github.com/xtaci/kcptun/generic"
 	"github.com/xtaci/smux"
+	"go.gridfinity.dev/gfcptun/generic"
 )
 
 const (
@@ -249,7 +245,6 @@ func main() {
 		config.LocalAddr = c.String("localaddr")
 		config.RemoteAddr = c.String("remoteaddr")
 		config.Key = c.String("key")
-		config.Crypt = c.String("crypt")
 		config.Mode = c.String("mode")
 		config.Conn = c.Int("conn")
 		config.AutoExpire = c.Int("autoexpire")
@@ -284,7 +279,7 @@ func main() {
 
 		// log redirect
 		if config.Log != "" {
-			f, err := os.OpenFile(config.Log, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+			f, err := os.OpenFile(config.Log, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0o666)
 			checkError(err)
 			defer f.Close()
 			log.SetOutput(f)
@@ -309,7 +304,6 @@ func main() {
 
 		log.Println("smux version:", config.SmuxVer)
 		log.Println("listening on:", listener.Addr())
-		log.Println("encryption:", config.Crypt)
 		log.Println("nodelay parameters:", config.NoDelay, config.Interval, config.Resend, config.NoCongestion)
 		log.Println("remote address:", config.RemoteAddr)
 		log.Println("sndwnd:", config.SndWnd, "rcvwnd:", config.RcvWnd)
@@ -335,42 +329,8 @@ func main() {
 			log.Fatal("unsupported smux version:", config.SmuxVer)
 		}
 
-		log.Println("initiating key derivation")
-		pass := pbkdf2.Key([]byte(config.Key), []byte(SALT), 4096, 32, sha1.New)
-		log.Println("key derivation done")
-		var block kcp.BlockCrypt
-		switch config.Crypt {
-		case "sm4":
-			block, _ = kcp.NewSM4BlockCrypt(pass[:16])
-		case "tea":
-			block, _ = kcp.NewTEABlockCrypt(pass[:16])
-		case "xor":
-			block, _ = kcp.NewSimpleXORBlockCrypt(pass)
-		case "none":
-			block, _ = kcp.NewNoneBlockCrypt(pass)
-		case "aes-128":
-			block, _ = kcp.NewAESBlockCrypt(pass[:16])
-		case "aes-192":
-			block, _ = kcp.NewAESBlockCrypt(pass[:24])
-		case "blowfish":
-			block, _ = kcp.NewBlowfishBlockCrypt(pass)
-		case "twofish":
-			block, _ = kcp.NewTwofishBlockCrypt(pass)
-		case "cast5":
-			block, _ = kcp.NewCast5BlockCrypt(pass[:16])
-		case "3des":
-			block, _ = kcp.NewTripleDESBlockCrypt(pass[:24])
-		case "xtea":
-			block, _ = kcp.NewXTEABlockCrypt(pass[:16])
-		case "salsa20":
-			block, _ = kcp.NewSalsa20BlockCrypt(pass)
-		default:
-			config.Crypt = "aes"
-			block, _ = kcp.NewAESBlockCrypt(pass)
-		}
-
 		createConn := func() (*smux.Session, error) {
-			kcpconn, err := dial(&config, block)
+			kcpconn, err := dial(&config)
 			if err != nil {
 				return nil, errors.Wrap(err, "dial()")
 			}
@@ -419,10 +379,9 @@ func main() {
 			for {
 				if session, err := createConn(); err == nil {
 					return session
-				} else {
-					log.Println("re-connecting:", err)
-					time.Sleep(time.Second)
 				}
+				log.Println("re-connecting:", err)
+				time.Sleep(time.Second)
 			}
 		}
 
@@ -476,7 +435,8 @@ func scavenger(ch chan timedSession, config *Config) {
 		case item := <-ch:
 			sessionList = append(sessionList, timedSession{
 				item.session,
-				item.expiryDate.Add(time.Duration(config.ScavengeTTL) * time.Second)})
+				item.expiryDate.Add(time.Duration(config.ScavengeTTL) * time.Second),
+			})
 		case <-ticker.C:
 			if len(sessionList) == 0 {
 				continue

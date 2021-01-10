@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	kcp "github.com/xtaci/kcp-go/v5"
+	kcp "go.gridfinity.dev/gfcp"
 )
 
 func SnmpLogger(path string, interval int) {
@@ -23,7 +23,7 @@ func SnmpLogger(path string, interval int) {
 			// split path into dirname and filename
 			logdir, logfile := filepath.Split(path)
 			// only format logfile
-			f, err := os.OpenFile(logdir+time.Now().Format(logfile), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+			f, err := os.OpenFile(logdir+time.Now().Format(logfile), os.O_RDWR|os.O_CREATE|os.O_APPEND, 0o666)
 			if err != nil {
 				log.Println(err)
 				return
@@ -31,11 +31,11 @@ func SnmpLogger(path string, interval int) {
 			w := csv.NewWriter(f)
 			// write header in empty file
 			if stat, err := f.Stat(); err == nil && stat.Size() == 0 {
-				if err := w.Write(append([]string{"Unix"}, kcp.DefaultSnmp.Header()...)); err != nil {
+				if err := w.Write(append([]string{"Unix"}, kcp.DefaultSnsi.Header()...)); err != nil {
 					log.Println(err)
 				}
 			}
-			if err := w.Write(append([]string{fmt.Sprint(time.Now().Unix())}, kcp.DefaultSnmp.ToSlice()...)); err != nil {
+			if err := w.Write(append([]string{fmt.Sprint(time.Now().Unix())}, kcp.DefaultSnsi.ToSlice()...)); err != nil {
 				log.Println(err)
 			}
 			// kcp.DefaultSnmp.Reset()

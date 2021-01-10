@@ -1,0 +1,17 @@
+Description=gfcptun-client
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+Environment=GOGC=120
+ExecStart=/usr/bin/gfcp_client -c /etc/client.json
+Restart=on-failure
+RestartSec=20
+KillMode=process
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,52 @@
+#!/usr/bin/env sh
+if [ ! -d "./.gfcp_root" ]; then
+	printf '%s\n' 'Error: Execute "build" from the project root.'
+	exit 1
+fi
+export BUILD_DIR="./build" || {
+	printf '%s\n' "Error: export failure."
+	exit 1
+}
+if [ ! -d "${BUILD_DIR:?Error: BUILD_DIR undefined.}" ]; then
+	mkdir -p "${BUILD_DIR:?Error: BUILD_DIR undefined.}" ||
+		{
+			printf '%s\n' "Error: mkdir failed."
+			exit 1
+		}
+fi
+cd "${BUILD_DIR:?Error: BUILD_DIR undefined.}" || {
+	printf '%s\n' "Error: unable to set cwd to BUILD_DIR."
+	exit 1
+}
+export GO111MODULE="on" ||
+	{
+		printf '%s\n' "Error: export failure."
+		exit 1
+	}
+VERSION=$(date -u +%Y%m%d-gridfinity ||
+	{ printf '%s\n' "Error: failed to set VERSION."; }) ||
+	{
+		printf '%s\n' "Error: export failure."
+		exit 1
+	}
+export VERSION ||
+	{
+		printf '%s\n' "Error: export failure."
+		exit 1
+	}
+export LDFLAGS='-X main.VERSION='${VERSION:?Error: VERSION undefined.}' -s -w -linkmode "external" -extldflags "-static"' ||
+	{
+		printf '%s\n' "Error: export failure."
+		exit 1
+	}
+CGO_ENABLED=1 go build -v -a -ldflags "$LDFLAGS_LINUX" -o "client_gfcp_${VERSION:?Error: VERSION undefined.}" ../client ||
+	{
+		printf '%s\n' "Error: Client build failed."
+		exit 1
+	}
+CGO_ENABLED=1 go build -v -a -ldflags "$LDFLAGS_LINUX" -o "server_gfcp_${VERSION:?Error: VERSION undefined.}" ../server ||
+	{
+		printf '%s\n' "Error: Server build failed."
+		exit 1
+	}
+printf '%s\n' "Build completed."

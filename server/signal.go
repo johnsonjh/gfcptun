@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	kcp "github.com/xtaci/kcp-go/v5"
+	kcp "go.gridfinity.dev/gfcp"
 )
 
 func init() {
@@ -23,7 +23,7 @@ func sigHandler() {
 	for {
 		switch <-ch {
 		case syscall.SIGUSR1:
-			log.Printf("KCP SNMP:%+v", kcp.DefaultSnmp.Copy())
+			log.Printf("KCP SNMP:%+v", kcp.DefaultSnsi.Copy())
 		}
 	}
 }
