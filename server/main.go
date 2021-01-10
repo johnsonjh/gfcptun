@@ -121,14 +121,14 @@ func main() {
 	}
 
 	myApp := cli.NewApp()
-	myApp.Name = "kcptun"
+	myApp.Name = "gfcptun"
 	myApp.Usage = "server(with SMUX)"
 	myApp.Version = VERSION
 	myApp.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "listen,l",
 			Value: ":29900",
-			Usage: "kcp server listen address",
+			Usage: "gfcp server listen address",
 		},
 		cli.StringFlag{
 			Name:  "target, t",
@@ -139,12 +139,7 @@ func main() {
 			Name:   "key",
 			Value:  "it's a secrect",
 			Usage:  "pre-shared secret between client and server",
-			EnvVar: "KCPTUN_KEY",
-		},
-		cli.StringFlag{
-			Name:  "crypt",
-			Value: "aes",
-			Usage: "aes, aes-128, aes-192, salsa20, blowfish, twofish, cast5, 3des, tea, xtea, xor, sm4, none",
+			EnvVar: "GFCPTUN_KEY",
 		},
 		cli.StringFlag{
 			Name:  "mode",
