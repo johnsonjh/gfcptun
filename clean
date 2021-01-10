@@ -1,16 +1,14 @@
 #!/usr/bin/env sh
 printf '%s' "Cleaning: "
 if [ -d "./build" ]; then
-	printf '%s' "."
-	rm -f ./build/client_gfcp_*-gridfinity 2> /dev/null || true
-	rm -f ./build/server_gfcp_*-gridfinity 2> /dev/null || true
-	printf '%s' "."
+	rm -f ./build/client_gfcp_*-gridfinity 2>/dev/null || true
+	rm -f ./build/server_gfcp_*-gridfinity 2>/dev/null || true
 else
-	printf '%s\n' ". no build directory!"
+	printf '%s\n' " no build directory!"
 	exit 1
 fi
-rmdir "./build" 2> /dev/null || {
-	printf '%s\n' ". build directory not removed!"
+rmdir "./build" 2>/dev/null || {
+	printf '%s\n' " build directory not removed!"
 	exit 1
 }
-printf '%s\n' ". clean-up completed!"
+printf '%s\n' " clean-up completed!"

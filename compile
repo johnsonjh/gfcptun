@@ -39,12 +39,12 @@ export LDFLAGS='-X main.VERSION='${VERSION:?Error: VERSION undefined.}' -s -w -l
 		printf '%s\n' "Error: export failure."
 		exit 1
 	}
-CGO_ENABLED=1 go build -v -a -ldflags "$LDFLAGS_LINUX" -o "client_gfcp_${VERSION:?Error: VERSION undefined.}" ../client ||
+CGO_ENABLED=1 go build -v -a -ldflags "${LDFLAGS:?Error: LDFLAGS undefined.}" -o "client_gfcp_${VERSION:?Error: VERSION undefined.}" ../client ||
 	{
 		printf '%s\n' "Error: Client build failed."
 		exit 1
 	}
-CGO_ENABLED=1 go build -v -a -ldflags "$LDFLAGS_LINUX" -o "server_gfcp_${VERSION:?Error: VERSION undefined.}" ../server ||
+CGO_ENABLED=1 go build -v -a -ldflags "${LDFLAGS:?Error: LDFLAGS undefined.}" -o "server_gfcp_${VERSION:?Error: VERSION undefined.}" ../server ||
 	{
 		printf '%s\n' "Error: Server build failed."
 		exit 1
