@@ -23,7 +23,7 @@ func sigHandler() {
 	for {
 		switch <-ch {
 		case syscall.SIGUSR1:
-			log.Printf("KCP SNMP:%+v", kcp.DefaultSnsi.Copy())
+			log.Printf("GFCP SNSI:%+v", kcp.DefaultSnsi.Copy())
 		}
 	}
 }

@@ -33,8 +33,8 @@ type Config struct {
 	StreamBuf    int    `json:"streambuf"`
 	KeepAlive    int    `json:"keepalive"`
 	Log          string `json:"log"`
-	SnmpLog      string `json:"snmplog"`
-	SnmpPeriod   int    `json:"snmpperiod"`
+	SnsiLog      string `json:"snsilog"`
+	SnsiPeriod   int    `json:"snsiperiod"`
 	Quiet        bool   `json:"quiet"`
 	TCP          bool   `json:"tcp"`
 }

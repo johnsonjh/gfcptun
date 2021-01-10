@@ -240,14 +240,14 @@ func main() {
 			Usage: "seconds between heartbeats",
 		},
 		cli.StringFlag{
-			Name:  "snmplog",
+			Name:  "snsilog",
 			Value: "",
-			Usage: "collect snmp to file, aware of timeformat in golang, like: ./snmp-20060102.log",
+			Usage: "collect snsi to file, aware of timeformat in golang, like: ./snsi-20060102.log",
 		},
 		cli.IntFlag{
-			Name:  "snmpperiod",
+			Name:  "snsiperiod",
 			Value: 60,
-			Usage: "snmp collect period, in seconds",
+			Usage: "snsi collect period, in seconds",
 		},
 		cli.BoolFlag{
 			Name:  "pprof",
@@ -296,8 +296,8 @@ func main() {
 		config.SmuxVer = c.Int("smuxver")
 		config.KeepAlive = c.Int("keepalive")
 		config.Log = c.String("log")
-		config.SnmpLog = c.String("snmplog")
-		config.SnmpPeriod = c.Int("snmpperiod")
+		config.SnsiLog = c.String("snsilog")
+		config.SnsiPeriod = c.Int("snsiperiod")
 		config.Pprof = c.Bool("pprof")
 		config.Quiet = c.Bool("quiet")
 		config.TCP = c.Bool("tcp")
@@ -342,8 +342,8 @@ func main() {
 		log.Println("smuxbuf:", config.SmuxBuf)
 		log.Println("streambuf:", config.StreamBuf)
 		log.Println("keepalive:", config.KeepAlive)
-		log.Println("snmplog:", config.SnmpLog)
-		log.Println("snmpperiod:", config.SnmpPeriod)
+		log.Println("snsilog:", config.SnsiLog)
+		log.Println("snsiperiod:", config.SnsiPeriod)
 		log.Println("pprof:", config.Pprof)
 		log.Println("quiet:", config.Quiet)
 		log.Println("tcp:", config.TCP)
@@ -356,7 +356,7 @@ func main() {
 		// log.Println("initiating key derivation")
 		// pass := pbkdf2.Key([]byte(config.Key), []byte(SALT), 4096, 32, sha1.New)
 		// log.Println("key derivation done")
-		go generic.SnmpLogger(config.SnmpLog, config.SnmpPeriod)
+		go generic.SnsiLogger(config.SnsiLog, config.SnsiPeriod)
 		if config.Pprof {
 			go http.ListenAndServe(":6060", nil)
 		}

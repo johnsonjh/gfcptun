@@ -212,14 +212,14 @@ func main() {
 			Usage: "seconds between heartbeats",
 		},
 		cli.StringFlag{
-			Name:  "snmplog",
+			Name:  "snsilog",
 			Value: "",
-			Usage: "collect snmp to file, aware of timeformat in golang, like: ./snmp-20060102.log",
+			Usage: "collect snsi to file, aware of timeformat in golang, like: ./snsi-20060102.log",
 		},
 		cli.IntFlag{
-			Name:  "snmpperiod",
+			Name:  "snsiperiod",
 			Value: 60,
-			Usage: "snmp collect period, in seconds",
+			Usage: "snsi collect period, in seconds",
 		},
 		cli.StringFlag{
 			Name:  "log",
@@ -267,8 +267,8 @@ func main() {
 		config.SmuxVer = c.Int("smuxver")
 		config.KeepAlive = c.Int("keepalive")
 		config.Log = c.String("log")
-		config.SnmpLog = c.String("snmplog")
-		config.SnmpPeriod = c.Int("snmpperiod")
+		config.SnsiLog = c.String("snsilog")
+		config.SnsiPeriod = c.Int("snsiperiod")
 		config.Quiet = c.Bool("quiet")
 		config.TCP = c.Bool("tcp")
 
@@ -319,8 +319,8 @@ func main() {
 		log.Println("conn:", config.Conn)
 		log.Println("autoexpire:", config.AutoExpire)
 		log.Println("scavengettl:", config.ScavengeTTL)
-		log.Println("snmplog:", config.SnmpLog)
-		log.Println("snmpperiod:", config.SnmpPeriod)
+		log.Println("snsilog:", config.SnsiLog)
+		log.Println("snsiperiod:", config.SnsiPeriod)
 		log.Println("quiet:", config.Quiet)
 		log.Println("tcp:", config.TCP)
 
@@ -385,8 +385,8 @@ func main() {
 			}
 		}
 
-		// start snmp logger
-		go generic.SnmpLogger(config.SnmpLog, config.SnmpPeriod)
+		// start snsi logger
+		go generic.SnsiLogger(config.SnsiLog, config.SnsiPeriod)
 
 		// start scavenger
 		chScavenger := make(chan timedSession, 128)

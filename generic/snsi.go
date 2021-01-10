@@ -11,7 +11,8 @@ import (
 	kcp "go.gridfinity.dev/gfcp"
 )
 
-func SnmpLogger(path string, interval int) {
+// SnsiLogger ...
+func SnsiLogger(path string, interval int) {
 	if path == "" || interval == 0 {
 		return
 	}
@@ -38,7 +39,7 @@ func SnmpLogger(path string, interval int) {
 			if err := w.Write(append([]string{fmt.Sprint(time.Now().Unix())}, kcp.DefaultSnsi.ToSlice()...)); err != nil {
 				log.Println(err)
 			}
-			// kcp.DefaultSnmp.Reset()
+			// kcp.DefaultSnsi.Reset()
 			w.Flush()
 			f.Close()
 		}
