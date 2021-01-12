@@ -4,7 +4,7 @@ gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a01d5d75fe8143e0b1a6962f3e54ae14)](https://app.codacy.com/gh/gridfinity/gfcptun?utm_source=github.com&utm_medium=referral&utm_content=gridfinity/gfcptun&utm_campaign=Badge_Grade)
 
-------
+---
 
 ## Recommendations:
 
@@ -68,6 +68,7 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 ### Memory Control
 
 - `GOGC` varuable tuning:
+
   - **20** for low-memory devices
   - **120** (or higher) for servers
 
@@ -75,9 +76,9 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 
   - Primary memory allocation is done from a buffer pool (_xmit.Buf_), in
     the GFCP layer. When allocated, a _fixed-capacity_ - usually 1500 bytes -
-	determined by the MtuLimit, will be returned: the _rx queue_, _tx queue_,
-	and, _fec queue_ all allocate from there, and then eturn the bytes to 
-	the pool after use.
+    determined by the MtuLimit, will be returned: the _rx queue_, _tx queue_,
+    and, _fec queue_ all allocate from there, and then eturn the bytes to
+    the pool after use.
 
 - The buffer pool mechanism maintains a _high watermark_ for _in-flight_
   objects from the pool, as to survive periodic garbage collection.
@@ -91,9 +92,9 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
   _concurrency limits_ and overall _resource usage_.
   - Increasing `-smuxbuf` will increase practical concurrency limits, however,
     the `-smuxbuf` value is **not** linerally proprotional to total
-	concurrency handling, mostly due to non-deterministic garbage collection
-	interaction. Because of this, only empiracal testing can provide practical
-	tuning guidelines.
+    concurrency handling, mostly due to non-deterministic garbage collection
+    interaction. Because of this, only empiracal testing can provide practical
+    tuning guidelines.
 
 ### Compression
 
@@ -101,8 +102,8 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 
 - Compression may save bandwidth for redundant, low-entropy data, but will
   **increase** overhead in other cases.
-  - Compression is **enabled by default**: use `-nocomp` to disable. 
-    * Both ends **must** use the same setting.
+  - Compression is **enabled by default**: use `-nocomp` to disable.
+    - Both ends **must** use the same setting.
 
 ### Monitoring
 
@@ -111,4 +112,3 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 ### Low-level GFCP tuning:
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
-
