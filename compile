@@ -49,4 +49,10 @@ CGO_ENABLED=0 go build -tags="osnetgo,osusergo" -v -a -ldflags "${LDFLAGS:?Error
 		printf '%s\n' "Error: Server build failed."
 		exit 1
 	}
+UPXC=$(env command -v upx 2>/dev/null || printf '%s' "true") || true
+if [ ! -z "${UPXC:-}" ]; then
+	printf '%s\n' "Compressing output."
+	strip --strip-all ./*_gfcp_*-gridfinity && ${UPXC:-} --ultra-brute -qq ./*_gfcp_*-gridfinity
+	printf '%s\n' "Compression completed."
+fi
 printf '%s\n' "Build completed."
