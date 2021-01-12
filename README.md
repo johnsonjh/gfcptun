@@ -1,5 +1,7 @@
 # gfcptun
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a01d5d75fe8143e0b1a6962f3e54ae14)](https://app.codacy.com/gh/gridfinity/gfcptun?utm_source=github.com&utm_medium=referral&utm_content=gridfinity/gfcptun&utm_campaign=Badge_Grade)
+
 gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
 ## Recommendations:
