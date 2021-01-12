@@ -74,14 +74,14 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 
 - Notes for SMUX tuning:
 
-  - Primary memory allocation is done from a buffer pool (_xmit.Buf_), in
-    the GFCP layer. When allocated, a _fixed-capacity_ - usually 1500 bytes -
+  - Primary memory allocation is done from a buffer pool (_xmit.Buf_), in the
+    GFCP layer. When allocated, a _fixed-capacity_ - usually 1500 bytes -
     determined by the MtuLimit, will be returned: the _rx queue_, _tx queue_,
-    and, _fec queue_ all allocate from there, and then eturn the bytes to
-    the pool after use.
+    and, _fec queue_ all allocate from there, and then eturn the bytes to the
+    pool after use.
 
-- The buffer pool mechanism maintains a _high watermark_ for _in-flight_
-  objects from the pool, as to survive periodic garbage collection.
+- The buffer pool mechanism maintains a _high watermark_ for _in-flight_ objects
+  from the pool, as to survive periodic garbage collection.
 
 - Memory will be returned to the system by the Go runtime when idle. Variables
   that can be used for tuning this are `-sndwnd`,`-rcvwnd`,`-ds`, and `-ps`.
@@ -91,10 +91,10 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 - The `-smuxbuf` setting and `GOMAXPROCS` variable adjust the balance between
   _concurrency limits_ and overall _resource usage_.
   - Increasing `-smuxbuf` will increase practical concurrency limits, however,
-    the `-smuxbuf` value is **not** linerally proprotional to total
-    concurrency handling, mostly due to non-deterministic garbage collection
-    interaction. Because of this, only empiracal testing can provide practical
-    tuning guidelines.
+    the `-smuxbuf` value is **not** linerally proprotional to total concurrency
+    handling, mostly due to non-deterministic garbage collection interaction.
+    Because of this, only empiracal testing can provide practical tuning
+    guidelines.
 
 ### Compression
 
