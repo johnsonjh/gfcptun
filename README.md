@@ -1,8 +1,10 @@
 # gfcptun
 
+gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a01d5d75fe8143e0b1a6962f3e54ae14)](https://app.codacy.com/gh/gridfinity/gfcptun?utm_source=github.com&utm_medium=referral&utm_content=gridfinity/gfcptun&utm_campaign=Badge_Grade)
 
-gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
+------
 
 ## Recommendations:
 
@@ -31,23 +33,22 @@ Client: ./gfcp_client -r "LISTEN_IP:4321" -l ":8765" -mode fast3 -nocomp -autoex
 Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 ```
 
-> Application -> **GFCP Tunnel[8765/TCP] -> GFCP Server(4321/UDP)** ->
-> Server[8765/TCP]
+> Application->TunOut[8765/TCP]->Internet->TuIn[4321/UDP]->Server[8765/TCP]
 
-- Other useful paramters: `-mode fast3 -ds 10 -ps 3` etc.
+- Other useful parameters: `-mode fast3 -ds 10 -ps 3` etc.
 
 ## Tuning for increased throughput:
 
 - To tune, increase `-rcvwnd` on client and `-sndwnd` on server in unison.
-  - The mininum window will dictates the maximum link throughput:
+  - The minimum window will dictates the maximum link throughput:
     `( 'Wnd' * ( 'MTU' / 'RTT' ) )`
-  - MTU should be set by -mtu paramter and not exceed the MTU of the physical
+  - MTU should be set by -mtu parameter and not exceed the MTU of the physical
     interface.
 
 ## Tuning for reduced latency:
 
-- Retransmission algorith aggressiveness:
-  - _`fast3` > `fast2` > `fast` > `normal` > `defaulat`_
+- Retransmission algorithm aggressiveness:
+  - _`fast3` > `fast2` > `fast` > `normal` > `default`_
 
 ### Head of line blocking due to N->1 multiplexing:
 
@@ -56,52 +57,58 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 - SMUXv2 can limit per-stream memory usage. Enable with `-smuxver 2`, and tune
   `-streambuf`.
   - Example: `-smuxver 2 -streambuf 8388608` for 8MiB buffer per stream.
-- Start tuning by limting the stream buffer on the **receiving** side of the
+- Start tuning by limiting the stream buffer on the **receiving** side of the
   link.
-  - Back-pressure should trigger exustingg congestion control mechanisms,
+  - Back-pressure should trigger exhausting congestion control mechanisms,
     providing practical rate limiting to prevent the exhaustion of upstream
     capacity and downlink starvation (buffer-bloat scenario).
-- SMUXv2 configuration is _not negotiated_, os must be set manually on both
+- SMUXv2 configuration is _not negotiated_, and must be set manually on both
   sides of the GFCP tunnel.
 
 ### Memory Control
 
-- GOGC tuning of 20 for low-memory devices, 100 or higher for servers.
+- `GOGC` varuable tuning:
+  - **20** for low-memory devices
+  - **120** (or higher) for servers
 
-- Notes for SMUX tuning (as per KCP):
+- Notes for SMUX tuning:
 
-  - Primary memory allocation is done from a buffer pool _xmit.Buf_, in the GFCP
-    layer. When allocated a _fixed-capacity_ (usually 1500 bytes, determined by
-    the MtuLimit, will be returned: the _rx queue_, _tx queue_ and _fec queue_
-    all allocate from there, and return the bytes to the pool after use.
+  - Primary memory allocation is done from a buffer pool (_xmit.Buf_), in
+    the GFCP layer. When allocated, a _fixed-capacity_ - usually 1500 bytes -
+	determined by the MtuLimit, will be returned: the _rx queue_, _tx queue_,
+	and, _fec queue_ all allocate from there, and then eturn the bytes to 
+	the pool after use.
 
-- The buffer pool mechanism maintains a _high watermark_ for _in-flight_ objects
-  from the pool, as to survive perodic garbage collection.
+- The buffer pool mechanism maintains a _high watermark_ for _in-flight_
+  objects from the pool, as to survive periodic garbage collection.
 
-- Memory will be returned to the system by the runtime when idle, as determined
-  by `-sndwnd`,`-rcvwnd`,`-ds`, `-ps` settings. These tunables affect the _high
-  watermark_: the larger the value, the higher the total memory consumption.
+- Memory will be returned to the system by the Go runtime when idle. Variables
+  that can be used for tuning this are `-sndwnd`,`-rcvwnd`,`-ds`, and `-ps`.
+  These parameters affect the _high watermark_ - the larger the value, the
+  higher the total memory consumption at any given moment.
 
-- The `-smuxbuf` setting and GOMAXPROCS adjust the balance between _concurrency
-  limits_ and _resource usage_.
-  - Increase smuxbuf will increase practical concurrency limits, however, the
-    `-smuxbuf` value alone is not linerally proprotional server concurrency
-    handling - due to garbage collection interaction, only empiracal testing can
-    provide practical tuning guidelines.
+- The `-smuxbuf` setting and `GOMAXPROCS` variable adjust the balance between
+  _concurrency limits_ and overall _resource usage_.
+  - Increasing `-smuxbuf` will increase practical concurrency limits, however,
+    the `-smuxbuf` value is **not** linerally proprotional to total
+	concurrency handling, mostly due to non-deterministic garbage collection
+	interaction. Because of this, only empiracal testing can provide practical
+	tuning guidelines.
 
 ### Compression
 
 - Optional compression using Snappy is available.
 
-- Compression may save bandwidth for high-compressable data, but will increase
-  overhead in other cases.
-  - Compression is enabled by default: use `-nocomp` to disable. Both ends must
-    use the same setting.
+- Compression may save bandwidth for redundant, low-entropy data, but will
+  **increase** overhead in other cases.
+  - Compression is **enabled by default**: use `-nocomp` to disable. 
+    * Both ends **must** use the same setting.
 
 ### Monitoring
 
-- Upon receiving the `USR1` signal, detailed link information will be output.
+- Upon receiving a `USR1` signal, detailed link information will be displayed.
 
 ### Low-level GFCP tuning:
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
+
