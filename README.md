@@ -112,3 +112,4 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 ### Low-level GFCP tuning:
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
+
