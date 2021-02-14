@@ -27,4 +27,3 @@ DEALINGS IN THE SOFTWARE.
 
   - Check "_This issue is confidential and should only be visible to team
     members with at least Reporter access._"
-
