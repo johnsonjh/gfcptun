@@ -3,6 +3,7 @@ printf '%s' "Cleaning:"
 if [ -d "./build" ]; then
 	rm -f ./build/client_gfcp_*-gridfinity 2>/dev/null || true
 	rm -f ./build/server_gfcp_*-gridfinity 2>/dev/null || true
+	rm -f ./build/*_gfcp_2*-gridfinity.upx 2>/dev/null || true
 else
 	printf '%s\n' " no build directory!"
 	exit 1
