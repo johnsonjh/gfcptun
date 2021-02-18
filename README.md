@@ -79,8 +79,8 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
     MtuLimit, will be returned. From there, the _rx queue_, _tx queue_, and,
     _fec queue_ are allocated, returning the allocation to the pool after use.
 
-- The buffer pool mechanism maintains a _high watermark_ for _in-flight_
-  objects from the pool, as to survive periodic garbage collection.
+- The buffer pool mechanism maintains a _high watermark_ for _in-flight_ objects
+  from the pool, as to survive periodic garbage collection.
 
 - Memory will be returned to the system by the Go runtime when idle. Variables
   that can be used for tuning this are `-sndwnd`,`-rcvwnd`,`-ds`, and `-ps`.
@@ -99,11 +99,11 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 
 - Optional compression using Snappy is available.
 
-- Compression may save bandwidth for _redundant, low-entropy_ data, but
-  **will** **increase** overhead in all other cases (and increase CPU usage).
+- Compression may save bandwidth for _redundant, low-entropy_ data, but **will**
+  **increase** overhead in all other cases (and increase CPU usage).
   - Compression is **enabled by default**: use `-nocomp` to disable.
-    - Both ends of the link **must** use the same compression setting, as it
-      is not negotiated.
+    - Both ends of the link **must** use the same compression setting, as it is
+      not negotiated.
 
 ### Monitoring
 
