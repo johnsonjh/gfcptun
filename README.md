@@ -56,13 +56,13 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
   - _`fast3` *🠚* `fast2` *🠚* `fast` *🠚* `normal` *🠚* `default`_
 
-## Avoiding **N** *🠚* **1** multiplexing [head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) behavior
+## Avoiding **N** _🠚_ **1** multiplexing [head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) behavior
 
-- Raise `-smuxbuf` to 16MiB (or more), however, the actual value to use 
+- Raise `-smuxbuf` to 16MiB (or more), however, the actual value to use
   depends on link congestion as well as available contiguous system memory.
 
-- SMUXv2 can be used to limit per-stream memory usage. 
-  Enable with `-smuxver 2`, and then tune with `-streambuf` *(size in bytes)*.
+- SMUXv2 can be used to limit per-stream memory usage.
+  Enable with `-smuxver 2`, and then tune with `-streambuf` _(size in bytes)_.
 
   - Example: `-smuxver 2 -streambuf 8388608` for an 8MiB buffer (per stream).
 
@@ -92,7 +92,7 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
     _fec queue_ will be allocated, and will return the allocation to the buffer
     pool after use.
 
-- The buffer pool mechanism maintains a _high watermark_ for _in-flight_ 
+- The buffer pool mechanism maintains a _high watermark_ for _in-flight_
   objects from the pool to survive periodic runtime garbage collection.
 
 - Memory will be returned to the system by the Go runtime when idle. Variables
@@ -106,15 +106,15 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
   - Increasing `-smuxbuf` will increase the practical concurrency limit,
     however, the `-smuxbuf` value is **not** linerally proprotional to the
-	concurrency handling maximum because Go runtime's garbage collection is,
-	for practical purposes, non-deterministic. 
+    concurrency handling maximum because Go runtime's garbage collection is,
+    for practical purposes, non-deterministic.
 
-	- Only empirical testing can provide the feedback required for real-world
-	  link tuning and optimization.
+  - Only empirical testing can provide the feedback required for real-world
+    link tuning and optimization.
 
 ## Link compression
 
-- Optional compression (using *Snappy*) is supported.
+- Optional compression (using _Snappy_) is supported.
 
 - Compression saves bandwidth on _redundant, low-entropy_ data, but **will**
   **increase** overhead (and CPU usage) in **all** other cases.
@@ -130,4 +130,3 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 ## Low-level GFCP tuning
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
-
