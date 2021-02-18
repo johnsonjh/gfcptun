@@ -8,7 +8,7 @@ require (
 	github.com/golang/snappy v0.0.3-0.20201103224600-674baa8c7fc3
 	github.com/google/gopacket v1.1.20-0.20210208164932-c21ea896c183 // indirect
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
-	github.com/urfave/cli v1.22.2-0.20191024042601-850de854cda0
+	github.com/urfave/cli v1.22.5
 	github.com/xtaci/tcpraw v1.2.25
 	go.gridfinity.dev/gfcp v0.0.0-20210215145916-dcaed2e89198
 	go.gridfinity.dev/gfsmux v0.0.0-20210215145401-571d82e9f2bb
