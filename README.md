@@ -10,7 +10,9 @@ gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
 1. 65535 available files per process, or more.
 2. MTU of 9702 is recommended for high-speed local links.
-3. Suggested `sysctl` tuning parameters UDP handling - see <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product> for BDP background information:
+3. Suggested `sysctl` tuning parameters UDP handling - see
+   <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
+   for BDP background information:
 
 ```text
 net.core.rmem_max=26214400  // BDP (Bandwidth Delay Product)
