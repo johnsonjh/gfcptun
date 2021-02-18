@@ -44,9 +44,9 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 - To tune, increase `-rcvwnd` on client, and `-sndwnd` on server, in unison.
   - The minimum window size will dictate the maximum link throughput:
     `( 'Wnd' * ( 'MTU' / 'RTT' ) )`
-  - MTU should be set by -mtu parameter and never exceed the MTU of the
-    physical interface. For DC/high-speed local links w/jumbo framing, using
-    an MTU of 9000-9702 is highly recommended.
+  - MTU should be set by -mtu parameter and never exceed the MTU of the physical
+    interface. For DC/high-speed local links w/jumbo framing, using an MTU of
+    9000-9702 is highly recommended.
 
 ## Tuning for reduced overall latency
 
@@ -57,8 +57,8 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 
 - Raise `-smuxbuf` to 16MB (or more) - the actual value to use depends on
   average link congestion and available system memory.
-- SMUXv2 can be used to limit per-stream memory usage. Enable with
-  `-smuxver 2`, and then tune with `-streambuf` (size in bytes).
+- SMUXv2 can be used to limit per-stream memory usage. Enable with `-smuxver 2`,
+  and then tune with `-streambuf` (size in bytes).
 
   - Example: `-smuxver 2 -streambuf 8388608` for an 8MiB buffer (per stream).
 
@@ -84,11 +84,11 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
   - Primary memory allocation is done from a buffer pool (_xmit.Buf_), in the
     GFCP layer. When allocating, a _fixed-size_ buffer, determined by the
     MtuLimit, will be returned. From there, the _rx queue_, _tx queue_, and,
-    _fec queue_ will be allocated, and will return the allocation to the
-    buffer pool after use.
+    _fec queue_ will be allocated, and will return the allocation to the buffer
+    pool after use.
 
-- The buffer pool mechanism maintains a _high watermark_ for _in-flight_
-  objects from the pool to survive periodic runtime garbage collection.
+- The buffer pool mechanism maintains a _high watermark_ for _in-flight_ objects
+  from the pool to survive periodic runtime garbage collection.
 
 - Memory will be returned to the system by the Go runtime when idle. Variables
   that can be used for tuning this are `-sndwnd`,`-rcvwnd`,`-ds`, and `-ps`.
@@ -100,10 +100,10 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
   balance between _concurrency limits_ and overall _resource usage_.
 
   - Increasing `-smuxbuf` will increase the practical concurrency limit,
-    however, the `-smuxbuf` value is **not** linerally proprotional to the
-    total concurrency handling maximum, due to the Go runtime's
-    non-deterministic garbage collection. Because of this, only empirical
-    testing can provide the data needed for real-life tuning recommendations.
+    however, the `-smuxbuf` value is **not** linerally proprotional to the total
+    concurrency handling maximum, due to the Go runtime's non-deterministic
+    garbage collection. Because of this, only empirical testing can provide the
+    data needed for real-life tuning recommendations.
 
 ### Link compression
 
