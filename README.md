@@ -8,21 +8,21 @@ gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
 ## GFCP Recommendations
 
-1. 65535 available files per process, or more.
-2. MTU of 9702 is recommended for high-speed local links.
-3. Suggested `sysctl` tuning parameters UDP handling - see
+- 65535 available files per process, or more.
+- MTU of 9702 is recommended for high-speed local links.
+- Suggested `sysctl` tuning parameters for UDP handling. (See
    <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
-   for BDP background information:
+   for BDP background information):
 
-```text
-net.core.rmem_max=26214400  // BDP (Bandwidth Delay Product)
+```shell
+net.core.rmem_max=26214400             # BDP (Bandwidth Delay Product)
 net.core.rmem_default=26214400
 net.core.wmem_max=26214400
 net.core.wmem_default=26214400
-net.core.netdev_max_backlog=2048 // (Proportional To Receive Window)
+net.core.netdev_max_backlog=2048       # (Proportional To Receive Window)
 ```
 
-1. Increase buffering for high-speed local links to 16MB or more, example:
+- Increase buffering for high-speed local links to 16MB or more, example:
 
 ```text
 -sockbuf 16777217
@@ -30,7 +30,7 @@ net.core.netdev_max_backlog=2048 // (Proportional To Receive Window)
 
 ## Invocation examples
 
-```text
+```shell
 Client: ./gfcp_client -r "LISTEN_IP:4321" -l ":8765" -mode fast3 -nocomp -autoexpire 900 -sockbuf 33554434 -dscp 46
 Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 ```
@@ -66,7 +66,7 @@ Server: ./gfcp_server -t "TARGET_IP:8765" -l ":4321" -mode fast3 -nocomp -sockbu
 
   - Back-pressure should trigger existing congestion control mechanisms,
     providing practical rate limiting to prevent the exhaustion of upstream
-    capacity and downlink starvation (bufferbloat scenario).
+    capacity and aviudubg downlink starvation (bufferbloat scenario).
 
 - SMUXv2 configuration is _not negotiated_, so must be set manually on **both**
   sides of the GFCP link.
