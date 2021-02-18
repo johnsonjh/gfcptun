@@ -13,10 +13,10 @@ gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 - MTU of 9000-9702 is recommended for high-speed local links.
 
 - Suggested minimum `sysctl` tuning parameters for Linux UDP handling:
-  
+
   - (See
-  <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
-  for additional BDP background information.)
+    <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
+    for additional BDP background information.)
 
 ```shell
 net.core.rmem_max=26214400       # Tune for BDP (bandwidth delay product)
