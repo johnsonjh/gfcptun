@@ -53,7 +53,7 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 - Retransmission algorithm aggressiveness:
   - _`fast3`🠚`fast2`🠚`fast`🠚`normal`🠚`default`_
 
-### Avoiding [Head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) due to N🠚1 multiplexing
+## Avoiding [Head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) due to N🠚1 multiplexing
 
 - Raise `-smuxbuf` to 16MB (or more) - the actual value to use depends on
   average link congestion and available system memory.
@@ -72,7 +72,7 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 - SMUXv2 configuration is _not negotiated_. It must be set manually on **both**
   sides of the GFCP link.
 
-### Memory Control
+## Memory Control
 
 - `GOGC` runtime environment variable tuning recommendations:
 
@@ -105,7 +105,7 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
     garbage collection. Because of this, only empirical testing can provide the
     data needed for real-life tuning recommendations.
 
-### Link compression
+## Link compression
 
 - Optional compression using Snappy is available.
 
@@ -116,10 +116,10 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 
     - Both ends of the link **must** use the same compression setting.
 
-### GFCP SNSI monitoring
+## GFCP SNSI monitoring
 
 - Upon receiving a `USR1` signal, detailed link information will be displayed.
 
-### Low-level GFCP tuning
+## Low-level GFCP tuning
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
