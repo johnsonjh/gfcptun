@@ -56,4 +56,3 @@ if [ ! -z "${UPXC:-}" ]; then
 	printf '%s\n' "Compression completed."
 fi
 printf '%s\n' "Build completed."
-

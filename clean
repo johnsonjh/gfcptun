@@ -13,4 +13,3 @@ rmdir "./build" 2>/dev/null || {
 	exit 1
 }
 printf '%s\n' " clean-up completed!"
-

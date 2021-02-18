@@ -10,7 +10,6 @@ type Config struct {
 	LocalAddr    string `json:"localaddr"`
 	RemoteAddr   string `json:"remoteaddr"`
 	Key          string `json:"key"`
-	Crypt        string `json:"crypt"`
 	Mode         string `json:"mode"`
 	Conn         int    `json:"conn"`
 	AutoExpire   int    `json:"autoexpire"`
