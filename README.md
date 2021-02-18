@@ -11,8 +11,8 @@ gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 - 65535 available files per process, or more.
 - MTU of 9702 is recommended for high-speed local links.
 - Suggested `sysctl` tuning parameters for UDP handling. (See
-   <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
-   for BDP background information):
+  <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
+  for BDP background information):
 
 ```shell
 net.core.rmem_max=26214400             # BDP (Bandwidth Delay Product)
@@ -44,9 +44,9 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 - To tune, increase `-rcvwnd` on client, and `-sndwnd` on server, in unison.
   - The minimum window size will dictate the maximum link throughput:
     `( 'Wnd' * ( 'MTU' / 'RTT' ) )`
-  - MTU should be set by -mtu parameter and never exceed the MTU of the 
+  - MTU should be set by -mtu parameter and never exceed the MTU of the
     physical interface. For DC/high-speed local links w/jumbo framing, using
-	an MTU of 9000-9702 is highly recommended.
+    an MTU of 9000-9702 is highly recommended.
 
 ## Tuning for reduced overall latency
 
@@ -55,7 +55,7 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 
 ### Avoiding [Head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) due to N🠚1 multiplexing
 
-- Raise `-smuxbuf` to 16MB (or more) - the actual value to use depends on 
+- Raise `-smuxbuf` to 16MB (or more) - the actual value to use depends on
   average link congestion and available system memory.
 - SMUXv2 can be used to limit per-stream memory usage. Enable with
   `-smuxver 2`, and then tune with `-streambuf` (size in bytes).
@@ -85,7 +85,7 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
     GFCP layer. When allocating, a _fixed-size_ buffer, determined by the
     MtuLimit, will be returned. From there, the _rx queue_, _tx queue_, and,
     _fec queue_ will be allocated, and will return the allocation to the
-	buffer pool after use.
+    buffer pool after use.
 
 - The buffer pool mechanism maintains a _high watermark_ for _in-flight_
   objects from the pool to survive periodic runtime garbage collection.
@@ -100,10 +100,10 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
   balance between _concurrency limits_ and overall _resource usage_.
 
   - Increasing `-smuxbuf` will increase the practical concurrency limit,
-    however, the `-smuxbuf` value is **not** linerally proprotional to the 
-	total concurrency handling maximum, due to the Go runtime's
-	non-deterministic garbage collection. Because of this, only empirical
-	testing can provide the data needed for real-life tuning recommendations.
+    however, the `-smuxbuf` value is **not** linerally proprotional to the
+    total concurrency handling maximum, due to the Go runtime's
+    non-deterministic garbage collection. Because of this, only empirical
+    testing can provide the data needed for real-life tuning recommendations.
 
 ### Link compression
 
@@ -123,4 +123,3 @@ server -t "TARGET:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 4
 ### Low-level GFCP tuning
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
-
