@@ -9,8 +9,12 @@ gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 ## Basic gfcptun/GFCP recommendations
 
 - Make available 65535 or more file descriptors per gfcptun process.
+
 - MTU of 9000-9702 is recommended for high-speed local links.
-- Suggested minimum `sysctl` tuning parameters for Linux UDP handling: (See
+
+- Suggested minimum `sysctl` tuning parameters for Linux UDP handling:
+  
+  - (See
   <https://www.sciencedirect.com/topics/computer-science/bandwidth-delay-product>
   for additional BDP background information.)
 
