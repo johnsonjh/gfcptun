@@ -9,10 +9,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/pkg/errors"
-	"github.com/urfave/cli"
 	"github.com/johnsonjh/gfcptun/generic"
 	smux "github.com/johnsonjh/gfsmux"
+	"github.com/pkg/errors"
+	"github.com/urfave/cli"
 )
 
 const (

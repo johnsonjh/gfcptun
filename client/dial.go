@@ -1,9 +1,9 @@
 package main
 
 import (
+	kcp "github.com/johnsonjh/gfcp"
 	"github.com/pkg/errors"
 	"github.com/xtaci/tcpraw"
-	kcp "github.com/johnsonjh/gfcp"
 )
 
 func dial(config *Config) (*kcp.UDPSession, error) {

@@ -12,11 +12,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/urfave/cli"
-	"github.com/xtaci/tcpraw"
 	kcp "github.com/johnsonjh/gfcp"
 	"github.com/johnsonjh/gfcptun/generic"
 	smux "github.com/johnsonjh/gfsmux"
+	"github.com/urfave/cli"
+	"github.com/xtaci/tcpraw"
 )
 
 const (
