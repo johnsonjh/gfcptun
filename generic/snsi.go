@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	kcp "go.gridfinity.dev/gfcp"
+	kcp "github.com/johnsonjh/gfcp"
 )
 
 // SnsiLogger ...
