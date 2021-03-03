@@ -1,4 +1,4 @@
-module github.com/johnsonjh/gfcptun
+module go.gridfinity.dev/gfcptun
 
 go 1.14
 
@@ -16,9 +16,9 @@ require (
 	github.com/stretchr/testify v1.7.1-0.20210116013205-6990a05d54c2 // indirect
 	github.com/urfave/cli v1.22.5
 	github.com/xtaci/tcpraw v1.2.25
-	github.com/johnsonjh/gfcp v0.0.0-20210215145916-dcaed2e89198
-	github.com/johnsonjh/gfsmux v0.0.0-20210215145401-571d82e9f2bb // indirect
-	github.com/johnsonjh/leaktestfe v0.0.0-20210215130230-ae7c71425363 // indirect
+	go.gridfinity.dev/gfcp v0.0.0-20210215145916-dcaed2e89198
+	go.gridfinity.dev/gfsmux v0.0.0-20210215145401-571d82e9f2bb // indirect
+	go.gridfinity.dev/leaktestfe v0.0.0-20210215130230-ae7c71425363 // indirect
 	go.uber.org/goleak v1.1.11-0.20200902203756-89d54f0adef2 // indirect
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
 	golang.org/x/lint v0.0.0-20201208152925-83fdc39ff7b5 // indirect

@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	kcp "github.com/johnsonjh/gfcp"
+	kcp "go.gridfinity.dev/gfcp"
 )
 
 func init() {

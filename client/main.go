@@ -11,8 +11,8 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
-	"github.com/johnsonjh/gfcptun/generic"
-	smux "github.com/johnsonjh/gfsmux"
+	"go.gridfinity.dev/gfcptun/generic"
+	smux "go.gridfinity.dev/gfsmux"
 )
 
 const (

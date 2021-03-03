@@ -14,9 +14,9 @@ import (
 
 	"github.com/urfave/cli"
 	"github.com/xtaci/tcpraw"
-	kcp "github.com/johnsonjh/gfcp"
-	"github.com/johnsonjh/gfcptun/generic"
-	smux "github.com/johnsonjh/gfsmux"
+	kcp "go.gridfinity.dev/gfcp"
+	"go.gridfinity.dev/gfcptun/generic"
+	smux "go.gridfinity.dev/gfsmux"
 )
 
 const (
