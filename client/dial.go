@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/pkg/errors"
 	"github.com/xtaci/tcpraw"
-	kcp "go.gridfinity.dev/gfcp"
+	kcp "github.com/johnsonjh/gfcp"
 )
 
 func dial(config *Config) (*kcp.UDPSession, error) {
