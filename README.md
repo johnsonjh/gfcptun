@@ -2,9 +2,7 @@
 
 gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a01d5d75fe8143e0b1a6962f3e54ae14)](https://app.codacy.com/gh/gridfinity/gfcptun?utm_source=github.com&utm_medium=referral&utm_content=gridfinity/gfcptun&utm_campaign=Badge_Grade)
-
----
+----
 
 ## Basic gfcptun/GFCP recommendations
 
@@ -32,6 +30,8 @@ net.core.netdev_max_backlog=2048 # (Adjust proportional to receive window)
 -sockbuf 16777217
 ```
 
+----
+
 ## Process invocation examples
 
 ```shell
@@ -42,6 +42,8 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 - Application 🠚 Out (8765/TCP) 🠚 Internet 🠚 In (4321/UDP) 🠚 Server (8765/TCP)
 
   - Other useful parameters: `-mode fast3 -ds 10 -ps 3`, etc.
+
+----
 
 ## Tuning for increased total throughput
 
@@ -54,11 +56,15 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
     interface. For DC/high-speed local links w/jumbo framing, using an MTU of
     9000-9702 is highly recommended.
 
+----
+
 ## Tuning for reduced overall latency
 
 - Adjust the retransmission algorithm aggressiveness:
 
   - _`fast3` *🠚* `fast2` *🠚* `fast` *🠚* `normal` *🠚* `default`_
+
+----
 
 ## Avoiding **N** _🠚_ **1** multiplexing [head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) behavior
 
@@ -79,6 +85,8 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
 - SMUXv2 configuration is _not negotiated_, so must be set manually on **both**
   sides of the GFCP link.
+
+----
 
 ## Memory consumption control
 
@@ -116,6 +124,8 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
   - Only empirical testing can provide the feedback required for real-world link
     tuning and optimization.
 
+----
+
 ## Link compression
 
 - Optional compression (using _Snappy_) is supported.
@@ -127,10 +137,25 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
     - Both ends of the link **must** use the same compression setting.
 
+----
+
 ## GFCP SNSI monitoring
 
 - Upon receiving a `USR1` signal, detailed link information will be displayed.
 
+----
+
 ## Low-level GFCP tuning
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
+
+----
+
+## Availability
+
+- [GitHub](https://github.com/johnsonjh/gfcptun)
+- [GitLab](https://gitlab.com/johnsonjh/gfcptun)
+- [SourceHut](https://sr.ht/~trn/gfcptun)
+- [NotABug](https://notabug.org/trn/gfcptun)
+
+----
