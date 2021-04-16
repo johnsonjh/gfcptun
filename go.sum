@@ -69,6 +69,8 @@ github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/johnsonjh/gfcp v0.0.0-20210407002738-6c5ba7755e46 h1:K2hYT0iqpXgBXksSXehHD4AcS6jZw/rQI1/XKTHVoac=
 github.com/johnsonjh/gfcp v0.0.0-20210407002738-6c5ba7755e46/go.mod h1:CpjAszigPSkaxray666QBerxikQn5e6pdmxMb2ATQlc=
+github.com/johnsonjh/gfcp v0.0.0-20210416062329-834c12e028ca h1:/pmZLY1AiR2wgr5lSwYL4fZrJIBbBA8GTonJ0Htyvcc=
+github.com/johnsonjh/gfcp v0.0.0-20210416062329-834c12e028ca/go.mod h1:CpjAszigPSkaxray666QBerxikQn5e6pdmxMb2ATQlc=
 github.com/johnsonjh/gfsmux v0.0.0-20210406212309-74fdbb6308eb h1:Uf6+AWaP8ByggivRo/0dqw1A4rXCb3jbFUFALl7byjA=
 github.com/johnsonjh/gfsmux v0.0.0-20210406212309-74fdbb6308eb/go.mod h1:OvoDw17edTH/QbGwbzhTPOCIPLEBMmMkefiumx910us=
 github.com/johnsonjh/leaktestfe v0.0.0-20210305084125-5614f292a6aa h1:gHeaUFZ1Df3oPBJEXiruIZXw/B0IMidnKH/uaOErGaA=
