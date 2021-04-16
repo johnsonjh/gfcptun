@@ -2,7 +2,7 @@
 
 gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
-----
+---
 
 ## Basic gfcptun/GFCP recommendations
 
@@ -30,7 +30,7 @@ net.core.netdev_max_backlog=2048 # (Adjust proportional to receive window)
 -sockbuf 16777217
 ```
 
-----
+---
 
 ## Process invocation examples
 
@@ -43,7 +43,7 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
   - Other useful parameters: `-mode fast3 -ds 10 -ps 3`, etc.
 
-----
+---
 
 ## Tuning for increased total throughput
 
@@ -56,7 +56,7 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
     interface. For DC/high-speed local links w/jumbo framing, using an MTU of
     9000-9702 is highly recommended.
 
-----
+---
 
 ## Tuning for reduced overall latency
 
@@ -64,7 +64,7 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
   - _`fast3` *🠚* `fast2` *🠚* `fast` *🠚* `normal` *🠚* `default`_
 
-----
+---
 
 ## Avoiding **N** _🠚_ **1** multiplexing [head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) behavior
 
@@ -86,7 +86,7 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 - SMUXv2 configuration is _not negotiated_, so must be set manually on **both**
   sides of the GFCP link.
 
-----
+---
 
 ## Memory consumption control
 
@@ -124,7 +124,7 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
   - Only empirical testing can provide the feedback required for real-world link
     tuning and optimization.
 
-----
+---
 
 ## Link compression
 
@@ -137,19 +137,19 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
     - Both ends of the link **must** use the same compression setting.
 
-----
+---
 
 ## GFCP SNSI monitoring
 
 - Upon receiving a `USR1` signal, detailed link information will be displayed.
 
-----
+---
 
 ## Low-level GFCP tuning
 
 - Example: `-mode manual -nodelay 1 -interval 20 -resend 2 -nc 1`
 
-----
+---
 
 ## Availability
 
@@ -158,4 +158,4 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 - [SourceHut](https://sr.ht/~trn/gfcptun)
 - [NotABug](https://notabug.org/trn/gfcptun)
 
-----
+---

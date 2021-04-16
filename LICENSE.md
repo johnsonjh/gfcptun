@@ -1,6 +1,6 @@
 # The MIT License (Expat)
 
-- Copyright © 2021 Jeffrey H. Johnson <trnsz@pobox.com>.  
+- Copyright © 2021 Jeffrey H. Johnson <trnsz@pobox.com>.
 - Copyright © 2021 Gridfinity, LLC. <support@gridfinity.com>
 - Copyright © 2016-2021 Daniel Fu.
 
