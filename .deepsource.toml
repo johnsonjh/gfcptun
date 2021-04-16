@@ -1,16 +1,11 @@
 version = 1
 
-test_patterns = [
-    "*_test.go",
-    "*/*_test.go"
-]
-
 [[analyzers]]
 name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_paths = ["github.com/gridfinity/gfcptun"]
+  import_paths = ["github.com/johnsonjh/gfcptun"]
 
 [[analyzers]]
 name = "test-coverage"
@@ -25,19 +20,19 @@ name = "secrets"
 enabled = true
 
 [[transformers]]
+name = "autopep8"
+enabled = true
+
+[[transformers]]
+name = "isort"
+enabled = true
+
+[[transformers]]
 name = "standardrb"
 enabled = true
 
 [[transformers]]
 name = "prettier"
-enabled = true
-
-[[transformers]]
-name = "standardjs"
-enabled = true
-
-[[transformers]]
-name = "rubocop"
 enabled = true
 
 [[transformers]]
@@ -53,9 +48,9 @@ name = "yapf"
 enabled = true
 
 [[transformers]]
-name = "autopep8"
+name = "standardjs"
 enabled = true
 
 [[transformers]]
-name = "isort"
+name = "rubocop"
 enabled = true
