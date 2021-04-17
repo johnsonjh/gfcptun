@@ -8,7 +8,8 @@ require (
 	github.com/golang/snappy v0.0.3
 	github.com/google/gopacket v1.1.20-0.20210416154051-65873e69004d // indirect
 	github.com/johnsonjh/gfcp v0.0.0-20210417043520-fed1da4f9a16
-	github.com/johnsonjh/leaktestfe v0.0.0-20210417033227-1351914ec3a1
+	github.com/johnsonjh/gfsmux v0.0.0-20210417035516-b76e0527b9e6
+	github.com/johnsonjh/leaktestfe v0.0.0-20210417042619-44f7010a6410
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.2-0.20191024042601-850de854cda0
 	github.com/xtaci/tcpraw v1.2.25
