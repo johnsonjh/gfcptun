@@ -7,8 +7,8 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.1-0.20201216211136-af8da765f046 // indirect
 	github.com/golang/snappy v0.0.3
 	github.com/google/gopacket v1.1.20-0.20210409173257-3aa782ce48d4
-	github.com/johnsonjh/gfcp v0.0.0-20210416100400-486212d34e46
 	github.com/johnsonjh/gfsmux v0.0.0-20210417031349-73a037fb23f7
+	github.com/johnsonjh/gfcp v0.0.0-20210417030239-d0773424530b
 	github.com/johnsonjh/leaktestfe v0.0.0-20210416103546-f09545587003
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.5
