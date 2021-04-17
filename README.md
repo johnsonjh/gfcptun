@@ -1,5 +1,7 @@
 # gfcptun
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/3d0e75c080ab05a06a87/maintainability)](https://codeclimate.com/github/johnsonjh/gfcptun/maintainability)
+
 gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
 
 ---
