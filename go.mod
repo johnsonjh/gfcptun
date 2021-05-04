@@ -3,12 +3,12 @@ module github.com/johnsonjh/gfcptun
 go 1.17
 
 require (
-	github.com/coreos/go-iptables v0.6.0 // indirect
+	github.com/coreos/go-iptables v0.6.0
 	github.com/cpuguy83/go-md2man/v2 v2.0.1-0.20201216211136-af8da765f046
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/golang/snappy v0.0.4-0.20210502035320-33fc3d5d8d99
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325
-	github.com/johnsonjh/gfcp v0.0.0-20210504032203-d783d934f68d
+	github.com/johnsonjh/gfcp v0.0.0-20210504214538-c8cf1fa6d9dd
 	github.com/johnsonjh/gfsmux v0.0.0-20210504031802-ec3eab69a88a
 	github.com/johnsonjh/leaktestfe v0.0.0-20210417042619-44f7010a6410
 	github.com/klauspost/cpuid/v2 v2.0.6
@@ -21,7 +21,7 @@ require (
 	go.uber.org/goleak v1.1.11-0.20200902203756-89d54f0adef2
 	go4.org v0.0.0-20201209231011-d4a079459e60
 	golang.org/x/lint v0.0.0-20201208152925-83fdc39ff7b5 // indirect
-	golang.org/x/net v0.0.0-20210503060351-7fd8e65b6420 // indirect
+	golang.org/x/net v0.0.0-20210504132125-bbd867fde50d // indirect
 	golang.org/x/sys v0.0.0-20210503173754-0981d6026fa6 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
