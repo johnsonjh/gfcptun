@@ -18,7 +18,7 @@ require (
 	github.com/stretchr/testify v1.7.1-0.20210116013205-6990a05d54c2 // indirect
 	github.com/urfave/cli v1.22.2-0.20191024042601-850de854cda0
 	github.com/xtaci/tcpraw v1.2.25
-	go.uber.org/goleak v1.1.11-0.20200902203756-89d54f0adef2 // indirect
+	go.uber.org/goleak v1.1.11-0.20200902203756-89d54f0adef2
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/net v0.0.0-20210508051633-16afe75a6701 // indirect
