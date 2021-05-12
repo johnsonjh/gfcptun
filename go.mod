@@ -14,7 +14,9 @@ require (
 	github.com/klauspost/cpuid/v2 v2.0.6
 	github.com/klauspost/reedsolomon v1.9.13-0.20210426094031-46e0559fe318
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
+	github.com/russross/blackfriday v1.6.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	github.com/stretchr/objx v0.3.1-0.20210208113821-6c797d85514c // indirect
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942 // indirect
 	github.com/urfave/cli v1.22.5
 	github.com/xtaci/tcpraw v1.2.25
@@ -23,6 +25,7 @@ require (
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/net v0.0.0-20210510120150-4163338589ed // indirect
 	golang.org/x/sys v0.0.0-20210511113859-b0526f3d8744 // indirect
+	golang.org/x/tools v0.1.2-0.20210511204214-be4aaae4cf86 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
