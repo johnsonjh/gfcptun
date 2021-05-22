@@ -19,7 +19,7 @@ require (
 	github.com/urfave/cli v1.22.5
 	github.com/xtaci/tcpraw v1.2.25
 	go.uber.org/goleak v1.1.11-0.20210517221212-5d1efd4d97e1
-	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
+	go4.org v0.0.0-20201209231011-d4a079459e60
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/net v0.0.0-20210521195947-fe42d452be8f // indirect
 	golang.org/x/sys v0.0.0-20210521203332-0cec03c779c1 // indirect
