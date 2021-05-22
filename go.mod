@@ -9,7 +9,7 @@ require (
 	github.com/golang/snappy v0.0.4-0.20210502035320-33fc3d5d8d99
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325 // indirect
 	github.com/johnsonjh/gfcp v0.0.0-20210522043727-613186a74f28
-	github.com/johnsonjh/gfsmux v0.0.0-20210522044045-6f0cf1e06235
+	github.com/johnsonjh/gfsmux v0.0.0-20210522055910-d64ed4d0e32c
 	github.com/johnsonjh/leaktestfe v0.0.0-20210522043628-c2602d3a6a18
 	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
 	github.com/klauspost/reedsolomon v1.9.13-0.20210426094031-46e0559fe318 // indirect
