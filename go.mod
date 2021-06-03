@@ -8,8 +8,8 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/golang/snappy v0.0.4-0.20210502035320-33fc3d5d8d99
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325 // indirect
-	github.com/johnsonjh/gfcp v0.0.0-20210531171114-b499c94b55f9
-	github.com/johnsonjh/gfsmux v0.0.0-20210530111107-58a3a7764c19
+	github.com/johnsonjh/gfcp v0.0.0-20210603214148-1efe8b3d7944
+	github.com/johnsonjh/gfsmux v0.0.0-20210603213143-191285eb7553
 	github.com/johnsonjh/leaktestfe v0.0.0-20210528122747-14ee4328e001
 	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
 	github.com/klauspost/reedsolomon v1.9.13-0.20210426094031-46e0559fe318 // indirect
@@ -22,7 +22,7 @@ require (
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/net v0.0.0-20210525063256-abc453219eb5 // indirect
-	golang.org/x/sys v0.0.0-20210531080801-fdfd190a6549 // indirect
+	golang.org/x/sys v0.0.0-20210603125802-9665404d3644 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
