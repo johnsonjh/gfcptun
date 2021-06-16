@@ -19,7 +19,12 @@ require (
 	github.com/urfave/cli v1.22.5
 	github.com/xtaci/tcpraw v1.2.25
 	go.uber.org/goleak v1.1.11-0.20210525221708-d36f3aede898
-	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
+	go4.org v0.0.0-20201209231011-d4a079459e60
+	golang.org/x/net v0.0.0-20210614182718-04defd469f4e // indirect
+	golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 // indirect
+	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/johnsonjh/leaktestfe v0.0.0-20210528122747-14ee4328e001 // indirect
+	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
