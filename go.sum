@@ -69,6 +69,8 @@ github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/johnsonjh/gfcp v0.0.0-20210616130747-c48f912eed36 h1:/TVlDjVYZKGFOmDYNUqjwBTn2+LpyI/vbZaseP/7iUc=
 github.com/johnsonjh/gfcp v0.0.0-20210616130747-c48f912eed36/go.mod h1:yBfVjkF4/zXyDOw/i39hPm4ZQhgWpA4/rpZZeMXfoCM=
+github.com/johnsonjh/gfcp v0.0.0-20210622102205-f58734c041eb h1:2slBX8J9nu8ZuA0AUkDajflxP435eOF+R6DRdfUcCbg=
+github.com/johnsonjh/gfcp v0.0.0-20210622102205-f58734c041eb/go.mod h1:PH5N7n85hH4Awc6N11ZDbl4WnK56UgHfiwJGOCIkdLA=
 github.com/johnsonjh/gfsmux v0.0.0-20210616130631-0d1a1585ab93 h1:ypjhrcaPEyVyBtYeVrKcw4ttIZrPsZvOaIsvx7axoSs=
 github.com/johnsonjh/gfsmux v0.0.0-20210616130631-0d1a1585ab93/go.mod h1:OOhf7aAoKQm34IBbWBdw9Yi7WugKveZMSxEfeAbRPug=
 github.com/johnsonjh/gfsmux v0.0.0-20210622102037-f2458e8f2f63 h1:AHaS++w4mow9OVz7GghgkvQIN8Waj6yPb/SmmiyTJgw=
@@ -82,6 +84,8 @@ github.com/klauspost/cpuid/v2 v2.0.6 h1:dQ5ueTiftKxp0gyjKSx5+8BtPWkyQbd95m8Gys/R
 github.com/klauspost/cpuid/v2 v2.0.6/go.mod h1:FInQzS24/EEf25PyTYn52gqo7WaD8xa0213Md/qVLRg=
 github.com/klauspost/reedsolomon v1.9.13-0.20210426094031-46e0559fe318 h1:mfM/+9xDhfSN3gnuvdtKGieNPbnykP/eOklOWY8DSMQ=
 github.com/klauspost/reedsolomon v1.9.13-0.20210426094031-46e0559fe318/go.mod h1:eqPAcE7xar5CIzcdfwydOEdcmchAKAP/qs14y4GCBOk=
+github.com/klauspost/reedsolomon v1.9.13-0.20210621131523-7bd22796ec03 h1:sMLYeLNKoh7lSiLaCfcXwAfBir0ogka0IinJBHHf0a0=
+github.com/klauspost/reedsolomon v1.9.13-0.20210621131523-7bd22796ec03/go.mod h1:eqPAcE7xar5CIzcdfwydOEdcmchAKAP/qs14y4GCBOk=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=

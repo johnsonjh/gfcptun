@@ -7,10 +7,9 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.1-0.20201216211136-af8da765f046 // indirect
 	github.com/golang/snappy v0.0.4-0.20210608040537-544b4180ac70
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325 // indirect
-	github.com/johnsonjh/gfcp v0.0.0-20210616130747-c48f912eed36
+	github.com/johnsonjh/gfcp v0.0.0-20210622102205-f58734c041eb
 	github.com/johnsonjh/gfsmux v0.0.0-20210622102037-f2458e8f2f63
 	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
-	github.com/klauspost/reedsolomon v1.9.13-0.20210426094031-46e0559fe318 // indirect
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/urfave/cli v1.22.5
