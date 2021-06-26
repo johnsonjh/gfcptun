@@ -8,7 +8,7 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/golang/snappy v0.0.4-0.20210608040537-544b4180ac70
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325
-	github.com/johnsonjh/gfcp v0.0.0-20210624003642-77636101d2fc
+	github.com/johnsonjh/gfcp v0.0.0-20210626191411-5714023a75af
 	github.com/johnsonjh/gfsmux v0.0.0-20210624003420-918c34ba7153
 	github.com/johnsonjh/leaktestfe v0.0.0-20210616124443-1446a662defb
 	github.com/klauspost/cpuid/v2 v2.0.6
