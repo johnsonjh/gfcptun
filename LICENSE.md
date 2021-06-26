@@ -1,10 +1,10 @@
-# The MIT License
-
-- Copyright © 2021 Jeffrey H. Johnson <trnsz@pobox.com>
-- Copyright © 2021 Gridfinity, LLC. <support@gridfinity.com>
-- Copyright © 2016-2021 Daniel Fu
-
 ```text
+The MIT License
+
+Copyright © 2021 Jeffrey H. Johnson <trnsz@pobox.com>
+Copyright © 2021 Gridfinity, LLC. <support@gridfinity.com>
+Copyright © 2016-2021 Daniel Fu
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software, and associated documentation files (the "Software"), to deal in
 the Software without restriction, including, without limitation, the rights to
