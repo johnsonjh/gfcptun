@@ -14,7 +14,7 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325
 	github.com/johnsonjh/leaktestfe v0.0.0-20210616124443-1446a662defb
-	github.com/klauspost/cpuid/v2 v2.0.6
+	github.com/klauspost/cpuid/v2 v2.0.7
 	github.com/klauspost/reedsolomon v1.9.13-0.20210621131523-7bd22796ec03
 	github.com/russross/blackfriday/v2 v2.1.0
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
