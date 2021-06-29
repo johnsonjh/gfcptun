@@ -3,7 +3,7 @@
 [![GRC](https://goreportcard.com/badge/github.com/johnsonjh/gfcptun)](https://goreportcard.com/badge/github.com/johnsonjh/gfcptun)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3d0e75c080ab05a06a87/maintainability)](https://codeclimate.com/github/johnsonjh/gfcptun/maintainability)
 
-gfcptun: An fast and low-latency connection tunnel using GFCP over UDP.
+gfcptun: A fast and low-latency connection tunnel using GFCP over UDP.
 
 ---
 
@@ -42,7 +42,7 @@ client -r "IN:4321" -l ":8765" -mode fast3 -nocomp -autoexpire 900 -sockbuf 3355
 server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 ```
 
-- Application 🠚 Out (8765/TCP) 🠚 Internet 🠚 In (4321/UDP) 🠚 Server (8765/TCP)
+- Application → Out (8765/TCP) → Internet → In (4321/UDP) → Server (8765/TCP)
 
   - Other useful parameters: `-mode fast3 -ds 10 -ps 3`, etc.
 
@@ -65,11 +65,11 @@ server -t "OUT:8765" -l ":4321" -mode fast3 -nocomp -sockbuf 33554434 -dscp 46
 
 - Adjust the retransmission algorithm aggressiveness:
 
-  - _`fast3` *🠚* `fast2` *🠚* `fast` *🠚* `normal` *🠚* `default`_
+  - _`fast3` *→* `fast2` *→* `fast` *→* `normal` *→* `default`_
 
 ---
 
-## Avoiding **N** _🠚_ **1** multiplexing [head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) behavior
+## Avoiding **N** _→_ **1** multiplexing [head-of-line blocking](https://www.sciencedirect.com/topics/computer-science/head-of-line-blocking) behavior
 
 - Raise `-smuxbuf` to 16MiB (or more), however, the actual value to use depends
   on link congestion as well as available contiguous system memory.
