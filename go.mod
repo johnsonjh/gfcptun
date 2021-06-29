@@ -7,9 +7,9 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.1-0.20201216211136-af8da765f046
 	github.com/golang/snappy v0.0.4-0.20210608040537-544b4180ac70
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325
-	github.com/johnsonjh/gfcp v0.0.0-20210626191411-5714023a75af
+	github.com/johnsonjh/gfcp v0.0.0-20210629213717-45113cbeb544
 	github.com/johnsonjh/gfsmux v0.0.0-20210624003420-918c34ba7153
-	github.com/johnsonjh/leaktestfe v0.0.0-20210616124443-1446a662defb
+	github.com/johnsonjh/leaktestfe v0.0.0-20210629212503-a92ef2d4610c
 	github.com/klauspost/cpuid/v2 v2.0.7
 	github.com/klauspost/reedsolomon v1.9.13-0.20210621131523-7bd22796ec03
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
