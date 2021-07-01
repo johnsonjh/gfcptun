@@ -6,7 +6,7 @@ require (
 	github.com/coreos/go-iptables v0.6.0
 	github.com/cpuguy83/go-md2man/v2 v2.0.1-0.20201216211136-af8da765f046
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
-	github.com/golang/snappy v0.0.4-0.20210608040537-544b4180ac70
+	github.com/golang/snappy v0.0.4
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325
 	github.com/johnsonjh/gfcp v0.0.0-20210629213717-45113cbeb544
 	github.com/johnsonjh/gfsmux v0.0.0-20210629212948-753dd03784f5
