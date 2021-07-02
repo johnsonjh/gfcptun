@@ -8,8 +8,8 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/golang/snappy v0.0.4
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325
-	github.com/johnsonjh/gfcp v0.0.0-20210629213717-45113cbeb544
-	github.com/johnsonjh/gfsmux v0.0.0-20210629212948-753dd03784f5
+	github.com/johnsonjh/gfcp v0.0.0-20210702035930-d4339a993b5d
+	github.com/johnsonjh/gfsmux v0.0.0-20210702035719-8740840eee4f
 	github.com/johnsonjh/leaktestfe v0.0.0-20210629212503-a92ef2d4610c
 	github.com/klauspost/cpuid/v2 v2.0.7
 	github.com/klauspost/reedsolomon v1.9.13-0.20210621131523-7bd22796ec03
@@ -23,7 +23,6 @@ require (
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
 	golang.org/x/net v0.0.0-20210614182718-04defd469f4e
 	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c
-	golang.org/x/tools v0.1.5-0.20210629191230-72e4d1bb8d47
 	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
