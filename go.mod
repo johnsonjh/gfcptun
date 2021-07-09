@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/golang/snappy v0.0.4
 	github.com/johnsonjh/gfcp v0.0.0-20210702035930-d4339a993b5d
-	github.com/johnsonjh/gfsmux v0.0.0-20210702035719-8740840eee4f
+	github.com/johnsonjh/gfsmux v0.0.0-20210709131652-4fd62e44a32f
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.5
 	github.com/xtaci/tcpraw v1.2.25
