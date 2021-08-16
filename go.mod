@@ -27,8 +27,8 @@ require (
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/net v0.0.0-20210813160813-60bc85c4be6d // indirect
-	golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e // indirect
-	golang.org/x/tools v0.1.6-0.20210813165731-45389f592fe9 // indirect
+	golang.org/x/sys v0.0.0-20210816032535-30e4713e60e3 // indirect
+	golang.org/x/tools v0.1.6-0.20210815155149-a55d5155d907 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
