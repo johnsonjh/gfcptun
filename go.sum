@@ -71,6 +71,8 @@ github.com/johnsonjh/gfcp v0.0.0-20211209073956-6818b1c4a6f9 h1:/LCjyDALxPWqWT+R
 github.com/johnsonjh/gfcp v0.0.0-20211209073956-6818b1c4a6f9/go.mod h1:84tpjgDiEOSVpNCYnB42mfV6BrYuXztWxRJFe9pCn1k=
 github.com/johnsonjh/gfsmux v0.0.0-20211117090526-3f9c1647b110 h1:hHHlOS5pi4j9erAfkyCGQ1LT6Y7xSrapLWbToGY91mE=
 github.com/johnsonjh/gfsmux v0.0.0-20211117090526-3f9c1647b110/go.mod h1:kXpxRnWqSvrioxe6LEQT/8U2CS/TyOpQGAZjfzksLJ0=
+github.com/johnsonjh/gfsmux v0.0.0-20211209095134-af4ead379047 h1:hfMOcJlUxj7ynolGgUmqHNyXXDzNUdAVdqKXtW4XDDs=
+github.com/johnsonjh/gfsmux v0.0.0-20211209095134-af4ead379047/go.mod h1:J7J7epruxYa8eBHZOFDaFTx47FbIurTsz/JToVLPJqM=
 github.com/johnsonjh/leaktestfe v0.0.0-20211025191910-5075ca3d8648/go.mod h1:KQGcZtMqVtBaIvG6kL71VIdtvwJIC9w5hsgzTtgtU1g=
 github.com/johnsonjh/leaktestfe v0.0.0-20211209070910-8867fa9b8525 h1:xC77/oWndAnBJNQEiMrT/H4VMtQSoFN25lhhES2mNxk=
 github.com/johnsonjh/leaktestfe v0.0.0-20211209070910-8867fa9b8525/go.mod h1:iMKVIfKgm1rym0a0IExkuag7/pnAqFEE10SoOFHRlVw=
