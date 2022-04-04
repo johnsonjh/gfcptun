@@ -15,9 +15,11 @@ require (
 	github.com/coreos/go-iptables v0.6.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2-0.20220308175229-3fb8c1389d91 // indirect
 	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325 // indirect
+	github.com/johnsonjh/leaktestfe v0.0.0-20220404202031-62cc076563b5 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.13-0.20220318160720-7062fc0aad4f // indirect
 	github.com/klauspost/reedsolomon v1.9.17-0.20220324122540-2f19c81be4b5 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+	go.uber.org/goleak v1.1.13-0.20220315213901-ebabc7b15e40 // indirect
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
 	golang.org/x/net v0.0.0-20220403103023-749bd193bc2b // indirect
 	golang.org/x/sys v0.0.0-20220403205710-6acee93ad0eb // indirect
