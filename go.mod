@@ -1,6 +1,6 @@
 module github.com/johnsonjh/gfcptun
 
-go 1.17
+go 1.19
 
 require (
 	github.com/golang/snappy v0.0.5-0.20220116011046-fa5810519dcb
