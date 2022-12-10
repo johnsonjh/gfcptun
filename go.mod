@@ -6,21 +6,19 @@ require (
 	github.com/golang/snappy v0.0.5-0.20220116011046-fa5810519dcb
 	github.com/johnsonjh/gfcp v0.0.0-20220412142542-7d928d68853f
 	github.com/johnsonjh/gfsmux v0.0.0-20221120035723-34e7dc958aa0
-	github.com/pkg/errors 614d223910a1
+	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.10
 	github.com/xtaci/tcpraw v1.2.25
 )
 
 require (
 	github.com/coreos/go-iptables v0.6.0 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.2-0.20220308175229-3fb8c1389d91 // indirect
-	github.com/google/gopacket v1.1.20-0.20210429153827-3eaba0894325 // indirect
-	github.com/johnsonjh/leaktestfe v0.0.0-20221120010816-186ef47b700d // indirect
-	github.com/klauspost/cpuid/v2 v2.0.13-0.20220318160720-7062fc0aad4f // indirect
-	github.com/klauspost/reedsolomon v1.9.17-0.20220324122540-2f19c81be4b5 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.3-0.20221025165720-8d6b5c54af90 // indirect
+	github.com/google/gopacket v1.1.20-0.20220810144506-32ee38206866 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.2 // indirect
+	github.com/klauspost/reedsolomon v1.11.4-0.20221130175039-76765c1d282d // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
-	go.uber.org/goleak v1.2.0 // indirect
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
-	golang.org/x/net v0.0.0-20220403103023-749bd193bc2b // indirect
-	golang.org/x/sys v0.0.0-20220403205710-6acee93ad0eb // indirect
+	golang.org/x/net v0.4.1-0.20221210045730-e1ec361d0b39 // indirect
+	golang.org/x/sys v0.3.0 // indirect
 )
