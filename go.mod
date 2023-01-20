@@ -7,7 +7,7 @@ require (
 	github.com/johnsonjh/gfcp v0.0.0-20221214195952-dd97361a09fa
 	github.com/johnsonjh/gfsmux v0.0.0-20221214222202-b3be206b03de
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
-	github.com/urfave/cli v1.22.10
+	github.com/urfave/cli v1.22.11
 	github.com/xtaci/tcpraw v1.2.25
 )
 
