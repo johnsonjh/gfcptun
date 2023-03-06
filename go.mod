@@ -19,6 +19,6 @@ require (
 	github.com/klauspost/reedsolomon v1.11.4-0.20221130175039-76765c1d282d // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
-	golang.org/x/net v0.4.1-0.20221213214114-ad92d3db360b // indirect
-	golang.org/x/sys v0.3.1-0.20221213140147-cffae8ece416 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
 )
