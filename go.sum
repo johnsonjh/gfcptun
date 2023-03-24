@@ -71,6 +71,8 @@ github.com/johnsonjh/gfcp v0.0.0-20221214195952-dd97361a09fa h1:9OJK2nBm1/AEwwtI
 github.com/johnsonjh/gfcp v0.0.0-20221214195952-dd97361a09fa/go.mod h1:57wwoVQuAkEZa3SuaGkhMYHzjG3ghk7QpRslXX2BgfE=
 github.com/johnsonjh/gfcp v0.0.0-20230308202053-89665c095f27 h1:duFvId1/2+66NmVE91yGIeEaE165BqqLoix0gjckYG0=
 github.com/johnsonjh/gfcp v0.0.0-20230308202053-89665c095f27/go.mod h1:CMPIMUJkMLTVdaVTm9w8ByKxPLpezdmRLETxHNlSNl4=
+github.com/johnsonjh/gfcp v0.0.0-20230324011123-ebaa5c95d30f h1:I4uxbmeuQzPMwDzZPU3eeEIrEQDxRU7j0OLfvVDXxKo=
+github.com/johnsonjh/gfcp v0.0.0-20230324011123-ebaa5c95d30f/go.mod h1:CMPIMUJkMLTVdaVTm9w8ByKxPLpezdmRLETxHNlSNl4=
 github.com/johnsonjh/gfsmux v0.0.0-20230214093759-8ef79c4770fe h1:i/4nL2vSv6ZURjLpg3ESoOUA0wE8mROVLrNkoDzIGtI=
 github.com/johnsonjh/gfsmux v0.0.0-20230214093759-8ef79c4770fe/go.mod h1:14nBTPi0TSxGTkliIe+0PT5NvAizeW/zDmDiY2itnh8=
 github.com/johnsonjh/gfsmux v0.0.0-20230309032541-8d4cfe542e2b h1:hls/lAu6xALLgOPpKE2oeXVeBUkoS5OfWQtKs0V/5+M=
