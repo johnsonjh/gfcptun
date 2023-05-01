@@ -4,10 +4,10 @@ go 1.19
 
 require (
 	github.com/golang/snappy v0.0.5-0.20220116011046-fa5810519dcb
-	github.com/johnsonjh/gfcp c82a602c11f3
+	github.com/johnsonjh/gfcp v0.0.0-20230324172434-c82a602c11f3
 	github.com/johnsonjh/gfsmux v0.0.0-20230309032541-8d4cfe542e2b
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
-	github.com/urfave/cli v1.22.12
+	github.com/urfave/cli v1.22.13
 	github.com/xtaci/tcpraw v1.2.25
 )
 
@@ -18,7 +18,7 @@ require (
 	github.com/klauspost/cpuid/v2 v2.2.2 // indirect
 	github.com/klauspost/reedsolomon v1.11.4-0.20221130175039-76765c1d282d // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
-	go4.org v0.0.0-20201209231011-d4a079459e60 // indirect
+	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
 )
