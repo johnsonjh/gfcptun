@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/golang/snappy v0.0.4
 	github.com/johnsonjh/gfcp v0.0.0-20231013201942-fd2b45bc6408
-	github.com/johnsonjh/gfsmux v0.0.0-20231214001257-c9d2a96496ed
+	github.com/johnsonjh/gfsmux v0.0.0-20231214183936-d9f3e24a74d6
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.14
 	github.com/urfave/cli/v2 v2.26.0
