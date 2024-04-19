@@ -69,6 +69,8 @@ github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/johnsonjh/gfcp v0.0.0-20231013201942-fd2b45bc6408 h1:lvB8Nekkwli0nTOxG/4pCatWqmweWFti9Z7/xxWH14s=
 github.com/johnsonjh/gfcp v0.0.0-20231013201942-fd2b45bc6408/go.mod h1:Fgp71LaFMQZSi3Yhn1zMgl5PkUfetjuTXqJVfs9ZMfg=
+github.com/johnsonjh/gfcp v0.0.0-20240419121919-a79bfa58fa2d h1:eABtiX6u22UOS+fuS99ISQl/TOqWweiYhjoqwDQUa5w=
+github.com/johnsonjh/gfcp v0.0.0-20240419121919-a79bfa58fa2d/go.mod h1:DIcyDJqdglENbc7v6oCad/3Z2AvPvqnVhHmjMsyOHhc=
 github.com/johnsonjh/gfsmux v0.0.0-20231214183936-d9f3e24a74d6 h1:hbDMP8tULgAV7S8fTPzL/jw3c1j/sj3vGDCak01IQGc=
 github.com/johnsonjh/gfsmux v0.0.0-20231214183936-d9f3e24a74d6/go.mod h1:9TVtlg4xPAL+jhEWQKemvYOtrhUuQSOXd0teig+YeXo=
 github.com/johnsonjh/leaktestfe v0.0.0-20231214001306-c40b7f1b6028 h1:8Y/Dub34qwpT+01DCyxX/k/t6LzozE9RJvE4h61Iuoo=
