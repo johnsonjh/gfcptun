@@ -1,7 +1,8 @@
 module github.com/johnsonjh/gfcptun
 
-go 1.21
-toolchain go1.23.7
+go 1.23.0
+
+toolchain go1.24.1
 
 require (
 	github.com/golang/snappy v1.0.0
@@ -9,6 +10,7 @@ require (
 	github.com/johnsonjh/gfsmux v0.0.0-20241023184052-a3dc21771709
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.16
+	github.com/urfave/cli/v2 v2.27.6
 	github.com/xtaci/tcpraw v1.2.31
 )
 
