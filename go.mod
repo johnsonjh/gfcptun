@@ -10,7 +10,7 @@ require (
 	github.com/johnsonjh/gfsmux v0.0.0-20250811175349-e5141f39ea95
 	github.com/pkg/errors v0.9.2-0.20201214064552-5dd12d0cfe7f
 	github.com/urfave/cli v1.22.17
-	github.com/urfave/cli/v3 v3.3.8
+	github.com/urfave/cli/v3 v3.3.9
 	github.com/xtaci/tcpraw v1.2.31
 )
 
