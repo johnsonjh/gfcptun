@@ -84,6 +84,8 @@ github.com/johnsonjh/gfsmux v0.0.0-20251008063658-3c69802f20e8 h1:QHTiNIrqTyc0ns
 github.com/johnsonjh/gfsmux v0.0.0-20251008063658-3c69802f20e8/go.mod h1:SOhDMoKwOXYjCiHmmMjfFrvd9HrEPD/zbi98O4DFPOU=
 github.com/johnsonjh/gfsmux v0.0.0-20251117235414-c1d1d96b595d h1:e2Pbr3C21+8hW6IdFL5/JXhxsXoIsqLB3og9u6VDdC8=
 github.com/johnsonjh/gfsmux v0.0.0-20251117235414-c1d1d96b595d/go.mod h1:SOhDMoKwOXYjCiHmmMjfFrvd9HrEPD/zbi98O4DFPOU=
+github.com/johnsonjh/gfsmux v0.0.0-20251118084405-21953dff86e5 h1:gCWBiLW2OyB72PE8OFuL9SEmwNhh0X6OlyilxhnrjqU=
+github.com/johnsonjh/gfsmux v0.0.0-20251118084405-21953dff86e5/go.mod h1:le81lhy64z3hOHLbnc483MHSvb+bMXYoAublOKYxoG8=
 github.com/johnsonjh/leaktestfe v0.0.0-20241023172206-258a63d8b8de h1:/tyZzmZ2OMINu5nm5LnZQt077c3btn5IjtIvMniI2xo=
 github.com/johnsonjh/leaktestfe v0.0.0-20241023172206-258a63d8b8de/go.mod h1:L1ATWvdIpazWSpShKalXkYj7Mu1R/5LlmwJ8pLq3ZXw=
 github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1:6v2b51hI/fHJwM22ozAgKL4VKDeJcHhJFhtBdhmNjmU=
