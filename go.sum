@@ -142,6 +142,7 @@ github.com/urfave/cli/v3 v3.4.1/go.mod h1:FJSKtM/9AiiTOJL4fJ6TbMUkxBXn7GO9guZqoZ
 github.com/urfave/cli/v3 v3.5.0/go.mod h1:ysVLtOEmg2tOy6PknnYVhDoouyC/6N42TMeoMzskhso=
 github.com/urfave/cli/v3 v3.6.0/go.mod h1:ysVLtOEmg2tOy6PknnYVhDoouyC/6N42TMeoMzskhso=
 github.com/urfave/cli/v3 v3.6.1/go.mod h1:ysVLtOEmg2tOy6PknnYVhDoouyC/6N42TMeoMzskhso=
+github.com/urfave/cli/v3 v3.6.2/go.mod h1:ysVLtOEmg2tOy6PknnYVhDoouyC/6N42TMeoMzskhso=
 github.com/xtaci/tcpraw v1.2.31 h1:i9mXzejnGJdGi0DpVKUn19Hq202/sHOJt0kObEwuE/U=
 github.com/xtaci/tcpraw v1.2.31/go.mod h1:T1blYD2EDkLneb+HtxddnzX38SoC9BG537EhkXeaT2k=
 github.com/xtaci/tcpraw v1.2.32 h1:wdJxd+9IaxGSaPK6luCLIdCkW/8TUQ6Vm872Ctq9L18=
