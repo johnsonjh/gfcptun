@@ -7,9 +7,9 @@ toolchain go1.26.5
 require (
 	github.com/golang/snappy v1.0.0
 	github.com/johnsonjh/gfcp v0.0.0-20260703014902-53849010b27c
-	github.com/johnsonjh/gfsmux v0.0.0-20260618231231-32237102c58c
+	github.com/johnsonjh/gfsmux v0.0.0-20260721001848-c6b425852185
 	github.com/pkg/errors v0.9.2-0.20260327151000-87f8819acf6d
-	github.com/urfave/cli/v3 v3.10.1
+	github.com/urfave/cli v1.22.17
 	github.com/urfave/cli/v3 v3.10.1
 	github.com/xtaci/tcpraw v1.2.32
 )
