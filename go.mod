@@ -9,8 +9,8 @@ require (
 	github.com/johnsonjh/gfcp v0.0.0-20260703014902-53849010b27c
 	github.com/johnsonjh/gfsmux v0.0.0-20260721060612-ee1b6b985667
 	github.com/pkg/errors v0.9.2-0.20260327151000-87f8819acf6d
-	github.com/urfave/cli/v3 v3.11.0
-	github.com/urfave/cli/v3 v3.11.0
+	github.com/urfave/cli v1.22.17
+	github.com/urfave/cli/v3 v3.12.0
 	github.com/xtaci/tcpraw v1.2.32
 )
 
@@ -21,7 +21,7 @@ require (
 	github.com/klauspost/cpuid/v2 v2.2.10-0.20241128153506-78c3c03144af // indirect
 	github.com/klauspost/reedsolomon v1.12.4 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
-	github.com/stretchr/testify v1.11.1 // indirect
+	github.com/stretchr/testify v1.12.1 // indirect
 	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
 	golang.org/x/net v0.55.0 // indirect
 	golang.org/x/sys v0.45.0 // indirect
